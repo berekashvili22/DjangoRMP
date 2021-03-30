@@ -1,0 +1,47 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="home">
+        <div class="home__search-wrap" style="background-image: url('{% static 'pages/images/desk.JPG' %}');">
+
+            <div class="home__search-wrap__content">
+                <h2 class="home__search-wrap__content--title">
+                    rogoria
+                </h2>
+                <h3 class="home__search-wrap__content--subtitle">
+                    Enter <p id="txtChange"></p> to get started
+                </h3>
+                <div class="search-wrap">
+                    <input type="text" class="search-wrap__input" id="homeSearch" placeholder="Type here...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="home__overview">
+            <div class="home__overview--item">
+                <div class="image">
+                    <i class="fas fa-graduation-cap fa-3x"></i>
+                </div>
+                <div class="title">Find reviews about Universities and its Faculties</div>
+                <!-- <div class="text"></div> -->
+
+            </div>
+            <div class="home__overview--item">
+                <div class="image">
+                    <i class="fas fa-user-secret fa-3x"></i>
+                </div>
+                <div class="title">Write your reviews anonymously</div>
+                <!-- <div class="text"></div> -->
+
+            </div>
+            <div class="home__overview--item">
+                <div class="image">
+                    <i class="fas fa-user-tie fa-3x"></i>
+                </div>
+                <div class="title">Find reviews about lecturers</div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
