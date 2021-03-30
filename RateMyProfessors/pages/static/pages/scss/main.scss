@@ -1,0 +1,10 @@
+@import './reset';
+@import './variables';
+@import './nav';
+@import './home';
+@import './footer';
+@import './universities';
+
+body {
+    font-family: $primary-font-family;
+}
