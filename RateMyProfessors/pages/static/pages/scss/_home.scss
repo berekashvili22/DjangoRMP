@@ -1,0 +1,129 @@
+.home {
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__search-wrap {
+        // margin-top: 100px;
+        width: 100%;
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
+        height: 60vh;
+        
+        &__content {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(1px) brightness(0.2);
+            @include flex(flex-start, column);
+
+            &--title {
+                color: $background-color;
+                font-size: size(megi);
+                margin-top: 120px;
+                width: 300px;
+                height: 60px;
+                @include flex(center, row);
+                font-family: $logo-font-family;
+                cursor: pointer;
+                @include transition-ease;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.164);
+                }
+            }
+
+            &--subtitle {
+                color: $background-color;
+                font-size: size(xxl);
+                margin-top: 150px;
+                width: 500px;
+                display: flex;
+                justify-content: center;
+
+                & #txtChange {
+                    font-weight: weight(bold);
+                }
+
+                & #txtChange::before {
+                    margin: 0 10px;
+                    content: "";
+                    letter-spacing: .15em;
+                    white-space: nowrap; /* Keeps the content on a single line */
+                    animation:
+                        animate 8s infinite linear,
+                }
+
+                @keyframes animate {
+
+                    0% {
+                        content: "Faculty";
+                    }
+                
+                    50% {
+                        content: "University";
+                    }
+                
+                    100% {
+                        content: "Lecturer";
+                    }
+                }
+
+            }
+
+            & .search-wrap {
+                margin-top: 50px;
+                position: relative;
+                width: 580px;
+                height: 55px;
+
+                &__input {
+                    border-radius: 50px;
+                    border: none;
+                    outline: none;
+                    text-indent: 70px;
+                    font-size: size(xl);
+                    height: 100%;
+                    width: 100%;
+                }
+
+                & i {
+                    position: absolute;
+                    left: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+      
+
+    }
+
+
+    &__overview {
+        width: 95%;
+        margin: auto;
+        @include flex(space-around, row);
+
+        &--item {
+            @include flex(center, column);
+            
+            & .image {
+                @include flex(center, row);
+
+                & i {
+                    margin-bottom: 20px;
+                }
+            }
+
+            & .title {
+                width: 250px;
+                text-align: center;
+                font-size: size(m);
+                font-weight: weight(bold);
+            }
+        }
+
+    }
+
+}
