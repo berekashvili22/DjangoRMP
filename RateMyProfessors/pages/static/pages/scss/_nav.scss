@@ -1,0 +1,74 @@
+.nav {
+    height: 10vh;
+    width: 100%;
+    background-color: $background-color;
+    @include flex(space-between, row);
+
+    & .logo-container {
+        @include flex(center, row);
+        width: 200px;
+        
+        & .logo {
+            @include flex(space-between, row);
+            font-family: $logo-font-family;
+            color: $primary-color;
+            
+            font-size: size(mega);
+
+            & p {
+                margin-left: 5px;
+            }
+
+            & span {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    & .menu {
+        width: 85vw;
+        padding: 0 10px;
+        @include flex(space-between, row);
+
+        &__ul {
+            @include flex(space-around, row);
+            width: 700px;
+
+            &__li {
+                @include flex(center, row);
+
+                &--a {
+                    color: $primary-color;
+                    font-size: size(m);
+                    font-weight: weight(bold);
+                    @include transition-ease;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+
+        .auth-ul {
+            width: 200px;
+
+            & #singUpBtn {
+                background-color: $secondary-color;
+                height: 45px;
+                width: 90px;
+                border-radius: 5px;
+                @include transition-ease;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+
+                & a {
+                    color: $background-color;
+                }
+            }
+        }
+    }
+}
