@@ -1,0 +1,54 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="lecturers">
+
+        <div class="lecturers__title-wrap">
+            <h1 class="lecturers__title-wrap__title">
+                <i class="fas fa-list"></i>
+                List of lecturers
+            </h1>
+        </div>
+
+        <div class="lecturers__list-wrap">
+
+            <div class="lecturers__list-wrap__box">
+                <div class="logo-wrap">
+                    <img src="{% static 'pages/images/lecturers/giorgi shonia.png' %}" alt="" class="logo">
+                </div>
+                <div class="title-wrap">
+                    <h2 class="title">Giorgi Shonia</h2>
+                </div>
+            </div>
+
+            <div class="lecturers__list-wrap__box">
+                <div class="logo-wrap">
+                    <img src="{% static 'pages/images/lecturers/mariam khomeriki.png' %}" alt="" class="logo">
+                </div>
+                <div class="title-wrap">
+                    <h2 class="title">Mariam Khomeriki</h2>
+                </div>
+            </div>
+
+            <div class="lecturers__list-wrap__box">
+                <div class="logo-wrap">
+                    <img src="{% static 'pages/images/lecturers/merab kutalia.jpg' %}" alt="" class="logo">
+                </div>
+                <div class="title-wrap">
+                    <h2 class="title">Merab Kutalia</h2>
+                </div>
+            </div>
+
+            <div class="lecturers__list-wrap__box">
+                <div class="logo-wrap">
+                    <img src="{% static 'pages/images/lecturers/mikheil gagoshidze.jpg' %}" alt="" class="logo">
+                </div>
+                <div class="title-wrap">
+                    <h2 class="title">Mikheil Gagoshidze</h2>
+                </div>
+            </div>
+           
+
+        </div>
+    </section>
+{% endblock %}
