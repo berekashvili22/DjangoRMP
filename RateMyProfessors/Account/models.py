@@ -36,7 +36,7 @@ class CustomAccountManager(BaseUserManager):
         return user
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class Account(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(max_length=150, unique=True)
