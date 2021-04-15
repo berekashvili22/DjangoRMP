@@ -1,0 +1,38 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+<div class="auth-wrap" style="background-image: url('{% static 'pages/images/auth/login-bg.JPG' %}');">
+    <div class="form-wrap" id="formWrap">
+
+        <header class="form-wrap__header">
+            <h1>Login</h1>
+            <p>Securely login to your account</p>
+        </header>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="session-input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="session-input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="session-input-group">
+                <button type="submit" title="Login">Login</button>
+            </div>
+            <div class="form-recover-section">
+                 <small class="text-muted">Forgot Password ?</small> <a href="#">Recover now</a>
+            </div>
+        </form>
+
+        <div>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- <div class="auth-wrap__shape">
+    </div> -->
+</div>
+{% endblock %}
