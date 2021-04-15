@@ -1,11 +1,11 @@
 from django.contrib import admin
-from . models import CustomUser
+from . models import Account
 from django.contrib.auth.admin import UserAdmin
 from django.forms import TextInput, Textarea
 
 
 class UserAdminConfig(UserAdmin):
-    model = CustomUser
+    model = Account
     search_fields = ('email', 'username',)
     list_filter = ('email', 'username', 'is_active', 'is_staff')
     ordering = ('-date_joined',)
@@ -23,4 +23,4 @@ class UserAdminConfig(UserAdmin):
     )
 
 
-admin.site.register(CustomUser, UserAdminConfig)
+admin.site.register(Account, UserAdminConfig)
