@@ -1,110 +1,132 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rogoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" />
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/css/main.css' %}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'pages/css/main.css' %}"
+    />
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
+      rel="stylesheet"
+    />
 
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- navbar -->
     <header class="nav">
-        <div class="logo-container">
-            <a href="{% url 'home-page' %}" class="logo">
-                <i class="fas fa-university"></i>
-                <p>r<span>o</span>g<span>o</span>ria</p>
+      <div class="logo-container">
+        <a href="{% url 'home' %}" class="logo">
+          <i class="fas fa-university"></i>
+          <p>r<span>o</span>g<span>o</span>ria</p>
+        </a>
+      </div>
+      <nav class="menu">
+        <ul class="menu__ul">
+          <li class="menu__ul__li">
+            <a href="{% url 'universities' %}" class="menu__ul__li--a">
+              Universities
             </a>
-        </div>
-        <nav class="menu">
-            <ul class="menu__ul">
-                <li class="menu__ul__li">
-                    <a href="{% url 'universities' %}" class="menu__ul__li--a">
-                        Universities
-                    </a>
-                </li>
-                <li class="menu__ul__li">
-                    <a href="#" class="menu__ul__li--a">
-                        Faculties
-                    </a>
-                </li>
-                <li class="menu__ul__li">
-                    <a href="#" class="menu__ul__li--a">
-                        Lecturers
-                    </a>
-                </li>
-            </ul>
-            <ul class="menu__ul auth-ul">
-                <li class="menu__ul__li">
-                    <a href="#" class="menu__ul__li--a">
-                        Login
-                    </a>
-                </li>
-                <li class="menu__ul__li" id="singUpBtn">
-                    <a href="#" class="menu__ul__li--a">
-                        Sing Up
-                    </a>
-                </li>
-            </ul>
-        </nav>
+          </li>
+          <li class="menu__ul__li">
+            <a href="#" class="menu__ul__li--a"> Faculties </a>
+          </li>
+          <li class="menu__ul__li">
+            <a href="{% url 'lecturers' %}" class="menu__ul__li--a">
+              Lecturers
+            </a>
+          </li>
+        </ul>
+        <ul class="menu__ul auth-ul">
+          {% if user.is_authenticated %}
+          <li class="menu__ul__li">
+            <a href="#" class="menu__ul__li--a"> {{ user.username }} </a>
+          </li>
+          <li class="menu__ul__li" id="singUpBtn">
+            <a href="{% url 'logout' %}" class="menu__ul__li--a"> Logout </a>
+          </li>
+          {% else %}
+          <li class="menu__ul__li">
+            <a href="{% url 'login' %}" class="menu__ul__li--a"> Login </a>
+          </li>
+          <li class="menu__ul__li" id="singUpBtn">
+            <a href="{% url 'register' %}" class="menu__ul__li--a"> Sing Up </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
     </header>
-
-    {% block content %}
-    {% endblock content %}
-
+    <!-- messages -->
+    {% for message in messages %}
+    <div class="messages-wrap {{ message.tags }}" id="messagesWrap">
+      <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+    <!-- main content -->
+    {% block content %} {% endblock content %}
+    <!-- footer -->
     <footer class="footer">
-        <div class="footer-item logo-cont">
-            <div class="logo">
-                rogoria
-            </div>
-            <p class="logo-text">
-                Online destination for Universities, Faculties and Lecturer ratings
-            </p>
-            <p class="copyright">
-                &copy; 2021 &#183; Tornike Berekashvili
-            </p>
-        </div>
-        <div class="footer-item">
-            <h2>Explore</h2>
-            <a href="#">Universities</a>
-            <a href="#">Faculties</a>
-            <a href="#">Lecturers</a>
-        </div>
-        <div class="footer-item">
-            <h2>More</h2>
-            <a href="#">About</a>
-            <a href="#">Help</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Site Guidliness</a>
-        </div>
-        <div class="footer-item">
-            <h2>Legal</h2>
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-        </div>
-        <div class="footer-item social-f">
-            <a href="#">
-                <i class="fab fa-facebook-square fa-2x"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-twitter-square fa-2x"></i>
-            </a>
-            <a href="#">
-                <i class="fab fa-instagram-square fa-2x"></i>
-            </a>
-        </div>
+      <div class="footer-item logo-cont">
+        <div class="logo">rogoria</div>
+        <p class="logo-text">
+          Online destination for Universities, Faculties and Lecturer ratings
+        </p>
+        <p class="copyright">&copy; 2021 &#183; Tornike Berekashvili</p>
+      </div>
+      <div class="footer-item">
+        <h2>Explore</h2>
+        <a href="#">Universities</a>
+        <a href="#">Faculties</a>
+        <a href="#">Lecturers</a>
+      </div>
+      <div class="footer-item">
+        <h2>More</h2>
+        <a href="#">About</a>
+        <a href="#">Help</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Site Guidliness</a>
+      </div>
+      <div class="footer-item">
+        <h2>Legal</h2>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div class="footer-item social-f">
+        <a href="#">
+          <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-twitter-square fa-2x"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-instagram-square fa-2x"></i>
+        </a>
+      </div>
     </footer>
 
-
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/e84f325d20.js" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
