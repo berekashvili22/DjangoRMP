@@ -1,0 +1,431 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+<div class="university">
+    <div class="university__content">
+        <div class="university__content--header-box">
+            <div class="logo-wrap">
+
+                <div class="logo-circle">
+                    <img src="{% static 'pages/images/logos/BTU.png' %}" alt="" class="logo-circle__logo">
+                </div>
+                
+            </div>
+            <div class="details">
+                <div class="details__top-wrap">
+                    <h2 class="details__top-wrap--title">
+                        Bussines and Technology University
+                    </h2>
+                    <h3 class="details__top-wrap--short-title">BTU <span>195</span></h3>
+                </div>
+           
+            </div>
+        </div>
+        <div class="university__content--navigation-box">
+            <h2 class="nav-btn activeNavBtn" data-id='modalAbout'>About</h2>
+            <h2 class="nav-btn" data-id='modalContact'>Contact</h2>
+            <h2 class="nav-btn" data-id="modalReview">Reviews</h2>
+        </div>
+        <!-- modals -->
+        <div class="university__content__modal-about uniDetailBox" id="modalAbout">
+            <div class="university__content__modal-about--title">ABOUT US</div>
+            <div class="university__content__modal-about--text">
+                “Silicon Valley Tbilisi” is the first private high-tech center that unites Business and Technology University, multi-million international employment platform, business incubator & accelerator, IT academy, media center, school, research center, VR laboratory, training center, pool and gyms in one space.
+                Business and Technology University represents higher education and research unit that integrates business and modern digital technologies. Teaching, education and research activities are held by consolidating students, academic staff and researchers.
+            </div>
+        </div>
+
+        <div class="university__content__modal-contact uniDetailBox" id="modalContact">
+            <div class="university__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>ADDRESS :</p>
+                </div>
+                <p class="content" id="address">
+                    Tbilisi 0162, Georgia I. Chavchavadze Avenue N82
+                </p>
+            </div>
+            <div class="university__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <p>PHONE :</p>
+                </div>
+                <p class="content" id="telephone">
+                    (+995 32) 2 195 015
+                </p>
+            </div>
+            <div class="university__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>EMAIL :</p>
+                </div>
+                <p class="content" id="email">
+                    info@btu.edu.ge
+                </p>
+            </div>
+            <div class="university__content__modal-contact__box">
+                <i class="fas fa-paperclip"></i>
+                <a class="title" id="website" href="#">WEBSITE</a>
+            </div>
+        </div>
+
+        <div class="university__content__modal-review uniDetailBox" id="modalReview">
+          
+            <div class="rating-box" id="reviewInfo">
+                <div class="rating-box__overview">
+                    <h2 class="rating-box__overview__score">4.6</h2>
+                    <div class="rating-box__overview__starwrap">
+                        <i class="fas fa-star fa-1x filled"></i>
+                        <i class="fas fa-star fa-1x filled"></i>
+                        <i class="fas fa-star fa-1x filled"></i>
+                        <i class="fas fa-star fa-1x filled"></i>
+                        <i class="fas fa-star-half-alt filled"></i>
+                    </div>
+                    <h3 class="rating-box__overview__title">
+                        University Rating
+                    </h3>
+                    <h2 class="rating-box__overview__subtitle">
+                        3431 ratings
+                    </h2>
+                </div>
+                <div class="rating-bars">
+        
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="bar-1"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                        </div>
+                        <p class="rating-bars__line--percentage" style="padding-left: 5px;">
+                            54%
+                        </p>
+                    </div>
+        
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="bar-2"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p class="rating-bars__line--percentage" style="padding-left: 5px;">
+                            54%
+                        </p>
+                    </div>
+        
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="bar-3"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p class="rating-bars__line--percentage" style="padding-left: 5px;">
+                            54%
+                        </p>
+                    </div>
+        
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="bar-4"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p class="rating-bars__line--percentage" style="padding-left: 5px;">
+                            54%
+                        </p>
+                    </div>
+        
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="bar-5"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p class="rating-bars__line--percentage" style="padding-left: 5px;">
+                            54%
+                        </p>
+                    </div>
+                </div>
+            </div>
+<!-- reviewInfo  reviewForm-->
+            <div class="review-form" id="reviewForm"> 
+                
+                <form action="" class="createReviewForm">
+                    <label for="reviewstars" class='createReviewForm__label'>Overall rating</label>
+                    <div class="createReviewForm__star-cont" id="reviewstars">
+                        <input type="radio" name="star" id="star1" value="5">
+                        <label for="star1"></label>
+                        <input type="radio" name="star" id="star2" value="4">
+                        <label for="star2"></label>
+                        <input type="radio" name="star" id="star3" value="3">
+                        <label for="star3"></label>
+                        <input type="radio" name="star" id="star4" value="2">
+                        <label for="star4"></label>
+                        <input type="radio" name="star" id="star5" value="1">
+                        <label for="star5"></label>
+                    </div>
+
+                    <label for="reviewtext" class="createReviewForm__label">Write your review</label>
+                    <textarea name="" id="reviewtext" cols="25" rows="4" class="createReviewForm__textcont" placeholder="Write your review here"></textarea>
+                    <label class="createReviewForm__anounymous"> Anonymous
+                        <input type="checkbox" />
+                    </label>
+                </form>
+         
+
+                <!-- <button id="getStar">get</button> -->
+            </div>
+
+            <div class="review-toggle-btn">
+                <button class="review-toggle-btn__btn" id="toggleReview">Write review</button>
+            </div>
+        
+            <div class="reviews-header">
+                <h2 class="reviews-header__title">Reviews</h2>
+                <div class="reviews-header__search-box">
+                    <input type="text" class="reviews-header__search-box--input" placeholder="Search reviews">
+                    <button class="reviews-header__search-box--button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <select name="rating-search" id="ratingSearch" class="reviews-header__search-box--rating-filter">
+                        <option value="" selected>All ratings</option>
+                        <option value="">Five stars</option>
+                        <option value="">Four stars</option>
+                        <option value="">Three stars</option>
+                        <option value="">Two stars</option>
+                        <option value="">One stars</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="reviews-box">
+                
+                <div class="reviews-box__review">
+                            <div class="reviews-box__review__profile-wrap">
+                                <div class="reviews-box__review__profile-wrap__img-wrap">
+                                    <img src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        alt="" class="reviews-box__review__profile-wrap__img-wrap__img">
+                                </div>
+                            </div>
+                            <div class="reviews-box__review__review-box">
+                                <div class="reviews-box__review__review-box__header">
+                                    <div class="reviews-box__review__review-box__header__name-cont">
+                                        <h3 class="reviews-box__review__review-box__header__name-cont__name">
+                                            Tornike Berekashvili
+                                        </h3>
+                                    </div>
+                                    <div class="reviews-box__review__review-box__header--rating">
+                                        <div class="reviews-box__review__review-box__header--rating__stars">
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="far fa-star fa-sm filled"></i>
+                                        </div>
+                                        <p class="reviews-box__review__review-box__header--rating__date">
+                                            4 months ago
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="reviews-box__review__review-box__text-wrap">
+                                    <p class="reviews-box__review__review-box__text-wrap__text">
+                                        Thank you for offering this course.. It should be really useful for the students.. And one more thing,
+                                        please add some
+                                        interview/placement related topic.. which is more impotent.. otherwise the course is good...
+                                    </p>
+                                </div>
+                            
+                            </div>
+                </div>
+
+                <div class="reviews-box__review">
+                            <div class="reviews-box__review__profile-wrap">
+                                <div class="reviews-box__review__profile-wrap__img-wrap">
+                                    <img src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        alt="" class="reviews-box__review__profile-wrap__img-wrap__img">
+                                </div>
+                            </div>
+                            <div class="reviews-box__review__review-box">
+                                <div class="reviews-box__review__review-box__header">
+                                    <div class="reviews-box__review__review-box__header__name-cont">
+                                        <h3 class="reviews-box__review__review-box__header__name-cont__name">
+                                            Tornike Berekashvili
+                                        </h3>
+                                    </div>
+                                    <div class="reviews-box__review__review-box__header--rating">
+                                        <div class="reviews-box__review__review-box__header--rating__stars">
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="far fa-star fa-sm filled"></i>
+                                        </div>
+                                        <p class="reviews-box__review__review-box__header--rating__date">
+                                            4 months ago
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="reviews-box__review__review-box__text-wrap">
+                                    <p class="reviews-box__review__review-box__text-wrap__text">
+                                        Thank you for offering this course.. It should be really useful for the students.. And one more thing,
+                                        please add some
+                                        interview/placement related topic.. which is more impotent.. otherwise the course is good...
+                                    </p>
+                                </div>
+                            
+                            </div>
+                </div>
+
+                <div class="reviews-box__review">
+                            <div class="reviews-box__review__profile-wrap">
+                                <div class="reviews-box__review__profile-wrap__img-wrap">
+                                    <img src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        alt="" class="reviews-box__review__profile-wrap__img-wrap__img">
+                                </div>
+                            </div>
+                            <div class="reviews-box__review__review-box">
+                                <div class="reviews-box__review__review-box__header">
+                                    <div class="reviews-box__review__review-box__header__name-cont">
+                                        <h3 class="reviews-box__review__review-box__header__name-cont__name">
+                                            Tornike Berekashvili
+                                        </h3>
+                                    </div>
+                                    <div class="reviews-box__review__review-box__header--rating">
+                                        <div class="reviews-box__review__review-box__header--rating__stars">
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="fas fa-star fa-sm filled"></i>
+                                            <i class="far fa-star fa-sm filled"></i>
+                                        </div>
+                                        <p class="reviews-box__review__review-box__header--rating__date">
+                                            4 months ago
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="reviews-box__review__review-box__text-wrap">
+                                    <p class="reviews-box__review__review-box__text-wrap__text">
+                                        Thank you for offering this course.. It should be really useful for the students.. And one more thing,
+                                        please add some
+                                        interview/placement related topic.. which is more impotent.. otherwise the course is good...
+                                    </p>
+                                </div>
+                            
+                            </div>
+                </div>
+
+
+
+            </div>
+        
+        </div>
+
+
+
+
+
+
+
+        
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+let navBtns = document.getElementsByClassName('nav-btn')
+let detailBoxes = document.getElementsByClassName('uniDetailBox')
+
+for (var i=0; i<navBtns.length; i++) {
+    navBtns[i].addEventListener('click', function() {
+        clearNavBtns()
+        clearBoxes(this.dataset.id)
+        this.classList.add('activeNavBtn')
+    })
+}
+
+
+function clearNavBtns() {
+    for (let i=0; i<navBtns.length; i++) {
+        navBtns[i].classList.remove('activeNavBtn')
+    }
+}
+
+
+function clearBoxes(boxId) {
+    for (let i=0; i<detailBoxes.length; i++) {
+        detailBoxes[i].style.display = 'none'
+    }
+    document.getElementById(`${boxId}`).style.display = 'flex'
+
+}
+
+let toggleReviewBtn = document.getElementById('toggleReview')
+let reviewInfo = document.getElementById('reviewInfo')
+let reviewForm = document.getElementById('reviewForm')
+
+toggleReviewBtn.addEventListener('click', function() {
+    if (reviewInfo.style.display != 'none') {
+        reviewInfo.style.display = 'none';
+        reviewForm.style.display = 'flex';
+        toggleReviewBtn.innerText = 'Cancel'
+    } else {
+        reviewInfo.style.display = 'flex';
+        reviewForm.style.display = 'none';
+        toggleReviewBtn.innerText = 'Write review'
+    }
+})
+
+document.getElementById('getStar').addEventListener('click', function() {
+    console.log(getCheckedValue('star'))
+})
+
+
+
+function getCheckedValue(star) {
+    var radios = document.getElementsByName(star);
+    for (i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            return radios[i].value;
+        }
+    }
+    return null;
+}
+
+
+</script>
+
+
+
+{% endblock %}
+
