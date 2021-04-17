@@ -1,0 +1,52 @@
+{% extends 'pages/base.html' %} {% load static %} {% block content %}
+<section class="profile">
+    <div class="account-info-header">
+        <div class="account-info-header__image-wrap">
+            <img
+                src="{{ user.profile.image.url }}"
+                alt=""
+                class="account-info-header__image-wrap__image"
+            />
+        </div>
+        <div class="account-info-header__details-wrap">
+            <h2 class="account-info-header__details-wrap__username">
+                {{ user.username }}
+            </h2>
+            <h3 class="account-info-header__details-wrap__email">
+                {{ user.email }}
+            </h3>
+        </div>
+    </div>
+    <div class="profile-info-wrap">
+        <div class="auth-wrap"">
+        <div class="form-wrap updateForm" id="formWrap">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="session-input-group">
+                    <label for="email">Email</label>
+                    {{ form.email }} {{ form.email.errors }}
+                </div>
+
+                <div class="session-input-group">
+                    <label for="username">Username</label>
+                    {{ form.username }} {{ form.username.errors }}
+                </div>
+
+                <div class="session-input-group img-upload">
+                    <label for="image">Image</label>
+                    {{ img_form.image }} {{ img_form.image.errors }}
+                    <div class="uploadBtn">
+                        <h4>Upload image</h4>
+                        <i class="fas fa-upload"></i>                        
+                    </div>
+                </div>
+
+                <div class="session-input-group">
+                    <button type="submit" title="Login">save</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</section> 
+{% endblock %}
