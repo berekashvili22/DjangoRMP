@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Account.apps.AccountConfig',
     'University.apps.UniversityConfig',
+    'Lecturer.apps.LecturerConfig',
     'pages.apps.PagesConfig',
     'django.contrib.humanize',
     'django_filters'
