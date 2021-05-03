@@ -1,5 +1,6 @@
 import django_filters
 from . models import UniReview, University
+from Lecturer.models import Lecturer, LecturerReview
 from django_filters import CharFilter, ChoiceFilter
 
 
@@ -18,3 +19,9 @@ class UniReviewFilter(django_filters.FilterSet):
                   model = UniReview
                   fields = '__all__'
                   exclude = ['text', 'score']
+
+class LecReviewFilter(django_filters.FilterSet):
+         class Meta:
+                  model = LecturerReview
+                  fields = '__all__'
+                #   exclude = ['text', 'score']

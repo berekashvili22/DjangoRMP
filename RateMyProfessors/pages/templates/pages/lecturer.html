@@ -2,8 +2,420 @@
 {% load static %} 
 {% load humanize %}
 {% block content %}
-<div>
-         uni
+<div class="reviewbox">
+    <div class="reviewbox__content">
+        <div class="reviewbox__content--header-box">
+            <div class="lec-wrap">
+                <!-- <div class="logo-circle"> -->
+                    <img
+                        src="{{ lec.image.url }}"
+                        alt=""
+                        class="lec-wrap__logo"
+                    />
+                <!-- </div> -->
+            </div>
+            <div class="details lec-details">
+                <div class="details__top-wrap">
+                    <h2 class="details__top-wrap--title lec-name">{{ lec.first_name }} {{lec.last_name}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="reviewbox__content--navigation-box">
+            <h2 class="nav-btn activeNavBtn" data-id="modalReview">Reviews</h2>
+            <h2 class="nav-btn" data-id="modalContact">Contact</h2>
+            <h2 class="nav-btn" data-id="modalAbout">About</h2>
+        </div>
+        <!-- modals -->
+        <div
+            class="reviewbox__content__modal-about uniDetailBox"
+            id="modalAbout"
+        >
+            <div class="reviewbox__content__modal-about--title">ABOUT US</div>
+            <div class="reviewbox__content__modal-about--text">
+                
+                {% if lec.about %}
+                    {{ lec.about }}
+                {% else %}   
+                    N/A
+                {% endif %}
+            </div>
+        </div>
+
+        <div
+            class="reviewbox__content__modal-contact uniDetailBox"
+            id="modalContact"
+        >
+            <div class="reviewbox__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>ADDRESS :</p>
+                </div>
+                <p class="content" id="address">
+                    {% if lec.address %}
+                        {{ lec.address }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
+            </div>
+            <div class="reviewbox__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <p>PHONE :</p>
+                </div>
+                <p class="content" id="telephone">
+                    {% if lec.phone %}
+                        {{ lec.phone }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
+            </div>
+            <div class="reviewbox__content__modal-contact__box">
+                <div class="title">
+                    <div class="icon-cont">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>EMAIL :</p>
+                </div>
+                <p class="content" id="email">
+                    {% if lec.email %}
+                        {{ lec.email }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
+            </div>
+            <div class="reviewbox__content__modal-contact__box">
+                <i class="fas fa-paperclip"></i>
+                {% if lec.website %}
+                 <a class="title" id="website" href="{{ lec.website }}">
+                {% else %}
+                 <a class="title" id="website" href="#">
+                {% endif %}
+                    WEBSITE
+                </a>
+            </div>
+        </div>
+
+        <div
+            class="reviewbox__content__modal-review uniDetailBox"
+            id="modalReview"
+        >
+            <div class="rating-box" id="reviewInfo">
+                <div class="rating-box__overview">
+                    <h2
+                        class="rating-box__overview__score"
+                        id="rating"
+                        data-id="{{rating}}"
+                    >
+                        {{ rating }}
+                    </h2>
+                    <div class="rating-box__overview__starwrap">
+                        <div
+                            class="rating-box__overview__starwrap__inner"
+                            id="ratingStars"
+                        ></div>
+                    </div>
+                    <h3 class="rating-box__overview__title">
+                        Lecturer Rating
+                    </h3>
+                    <h2 class="rating-box__overview__subtitle">{{reviewsCount}} reviews</h2>
+                </div>
+                <div class="rating-bars">
+                    <!-- 5 star -->
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="barline_inner" style="width: {{starsPercentage.s5}}%;"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                        </div>
+                        <p
+                            class="rating-bars__line--percentage"
+                            style="padding-left: 5px"
+                        >
+                        {{starsPercentage.s5}}%
+                        </p>
+                    </div>
+                    <!-- 4 star -->
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="barline_inner" style="width: {{starsPercentage.s4}}%;"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p
+                            class="rating-bars__line--percentage"
+                            style="padding-left: 5px"
+                        >
+                            {{starsPercentage.s4}}%
+                        </p>
+                    </div>
+                    <!-- 3 star -->
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="barline_inner" style="width: {{starsPercentage.s3}}%;"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p
+                            class="rating-bars__line--percentage"
+                            style="padding-left: 5px"
+                        >
+                            {{starsPercentage.s3}}%
+                        </p>
+                    </div>
+                    <!-- 2 star -->
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="barline_inner" style="width: {{starsPercentage.s2}}%;"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p
+                            class="rating-bars__line--percentage"
+                            style="padding-left: 5px"
+                        >
+                            {{starsPercentage.s2}}%
+                        </p>
+                    </div>
+                    <!-- 1 star -->
+                    <div class="rating-bars__line">
+                        <div class="rating-bars__line__bar-cont">
+                            <div class="barline_inner" style="width: {{starsPercentage.s1}}%;"></div>
+                        </div>
+                        <div class="rating-bars__line--stars-cont">
+                            <i class="fas fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                            <i class="far fa-star fa-sm filled"></i>
+                        </div>
+                        <p
+                            class="rating-bars__line--percentage"
+                            style="padding-left: 5px"
+                        >
+                            {{starsPercentage.s1}}%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- reviewInfo  reviewForm-->
+            <div class="review-form" id="reviewForm">
+                {% if canVote %}
+                <form
+                    action="{% url 'lecturer' lec.id %}"
+                    class="createReviewForm"
+                    method="POST"
+                >
+                    {% csrf_token %}
+                    <label for="reviewstars" class="createReviewForm__label">
+                        Overall rating
+                    </label>
+                    <div class="createReviewForm__star-cont" id="reviewstars">
+                        <input type="radio" name="star" id="star1" value="5" />
+                        <label for="star1"></label>
+                        <input type="radio" name="star" id="star2" value="4" />
+                        <label for="star2"></label>
+                        <input type="radio" name="star" id="star3" value="3" />
+                        <label for="star3"></label>
+                        <input type="radio" name="star" id="star4" value="2" />
+                        <label for="star4"></label>
+                        <input type="radio" name="star" id="star5" value="1" />
+                        <label for="star5"></label>
+                    </div>
+                    <div class="createReviewForm__anounymous">
+                        <label for="Anonymous">Anonymous review</label>
+                        <input
+                            type="checkbox"
+                            id="Anonymous"
+                            name="Anonymous"
+                        />
+                        <i class="far fa-question-circle"></i>
+                    </div>
+
+                    <textarea
+                        name="reviewText"
+                        id="reviewtext"
+                        cols="25"
+                        rows="4"
+                        class="createReviewForm__textcont"
+                        placeholder="Write your review here"
+                    ></textarea>
+                    <button type="submit" class="createReviewForm__btn">
+                        Submit review
+                    </button>
+                </form>
+                {% else %}
+                <p>You already voted</p>
+                {% endif %}
+            </div>
+
+            <div class="review-toggle-btn">
+                <button class="review-toggle-btn__btn" id="toggleReview">
+                    Write review
+                </button>
+            </div>
+
+            <form method="GET" class="reviews-header">
+
+                <h2 class="reviews-header__title">Reviews</h2>
+                <div class="reviews-header__search-box">
+                    {{myFilter.form.text}}
+                    <button class="reviews-header__search-box--button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- {{myFilter.form.score}} -->
+                </div>
+            </form>
+
+            <div class="reviews-box">
+                {% if reviews %} {% for review in page_obj %}
+                <div class="reviews-box__review">
+                    <div class="reviews-box__review__profile-wrap">
+                        <div
+                            class="reviews-box__review__profile-wrap__img-wrap"
+                        >
+                            {% if review.user.profile.image.url %}
+                            <img
+                                src="{{ review.user.profile.image.url }}"
+                                alt="User Image"
+                                class="reviews-box__review__profile-wrap__img-wrap__img"
+                            />
+                            {% else %}
+                            <img
+                                src="/media/default.png"
+                                alt="User Image"
+                                class="reviews-box__review__profile-wrap__img-wrap__img"
+                            />
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="reviews-box__review__review-box">
+                        <div class="reviews-box__review__review-box__header">
+                            <div
+                                class="reviews-box__review__review-box__header__name-cont"
+                            >
+                                <h3
+                                    class="reviews-box__review__review-box__header__name-cont__name"
+                                >
+                                    {% if review.user.username %}
+                                    {{review.user.username }} {% else %}
+                                    Anonymous {% endif %}
+                                </h3>
+                            </div>
+                            <div
+                                class="reviews-box__review__review-box__header--rating"
+                            >
+                                <div
+                                    class="reviews-box__review__review-box__header--rating__stars"
+                                >
+                                    {% if review.score == 5 %}
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    {% elif review.score == 4 %}
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    {% elif review.score == 3 %}
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    {% elif review.score == 2 %}
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    {% elif review.score == 1 %}
+                                    <i class="fas fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    <i class="far fa-star fa-sm filled"></i>
+                                    {% endif %}
+                                </div>
+                                <p
+                                    class="reviews-box__review__review-box__header--rating__date"
+                                >
+                                    {{review.date_added|naturaltime}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reviews-box__review__review-box__text-wrap">
+                            <p
+                                class="reviews-box__review__review-box__text-wrap__text"
+                            >
+                                {{ review.text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %} {% else %}
+                <p>no reviews available</p>
+                {% endif %}
+                    <!-- pagination -->
+                    <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1" class="pagination-btn-outline-dark"><i class="fas fa-angle-double-left"></i>
+
+                            </a>
+                            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-left"></i>
+
+                            </a>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <a href="?page={{ num }}" class="pagination-btn-outline-dark active">{{ num }}</a>
+                        {% elif num > page_obj.number|add:'-3' and num > page_obj.number|add:'3' %}
+                            <a href="?page={{ num }}" class="pagination-btn-outline-dark">{{ num }}</a>
+                        {% endif %}
+                        {% endfor %}    
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-right"></i>
+
+                            </a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-double-right"></i>
+
+                            </a>
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
