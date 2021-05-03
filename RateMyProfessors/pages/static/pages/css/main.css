@@ -1459,6 +1459,27 @@ button {
   }
 }
 
+.reviewbox__content--header-box .logo-wrap .logo-circle .lec-logo {
+  width: auto;
+  padding: 30px;
+}
+
+.reviewbox__content--header-box .lec-wrap {
+  width: 150px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid #c0b8c3;
+}
+
+.reviewbox__content--header-box .lec-wrap__logo {
+  height: 100%;
+}
+
 .reviewbox__content--header-box .details {
   width: 80%;
   margin-top: 35px;
@@ -1510,6 +1531,13 @@ button {
   }
 }
 
+.reviewbox__content--header-box .details__top-wrap .lec-name {
+  font-size: 26px;
+  font-weight: 700;
+  padding: 0px;
+  margin: 0px;
+}
+
 .reviewbox__content--header-box .details__top-wrap--short-title {
   color: #393e46;
   font-size: 20px;
@@ -1552,6 +1580,18 @@ button {
   .reviewbox__content--header-box .details__top-wrap--short-title span {
     font-size: 12px;
   }
+}
+
+.reviewbox__content--header-box .lec-details {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px;
 }
 
 .reviewbox__content--navigation-box {
@@ -2367,6 +2407,10 @@ button {
 .profile .account-info-header__details-wrap__email {
   color: #393e46;
   font-weight: lighter;
+}
+
+.pagination {
+  margin-top: 25px;
 }
 
 .step-links {

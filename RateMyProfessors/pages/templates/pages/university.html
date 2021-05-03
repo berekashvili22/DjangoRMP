@@ -36,7 +36,12 @@
         >
             <div class="reviewbox__content__modal-about--title">ABOUT US</div>
             <div class="reviewbox__content__modal-about--text">
-                {{ uni.about }}
+                
+                {% if uni.about %}
+                    {{ uni.about }}
+                {% else %}   
+                    N/A
+                {% endif %}
             </div>
         </div>
 
@@ -51,7 +56,12 @@
                     </div>
                     <p>ADDRESS :</p>
                 </div>
-                <p class="content" id="address">{{ uni.address }}</p>
+                <p class="content" id="address">
+                    {% if uni.about %}
+                        {{ uni.address }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
             </div>
             <div class="reviewbox__content__modal-contact__box">
                 <div class="title">
@@ -60,7 +70,12 @@
                     </div>
                     <p>PHONE :</p>
                 </div>
-                <p class="content" id="telephone">{{ uni.phone }}</p>
+                <p class="content" id="telephone">
+                    {% if uni.about %}
+                        {{ uni.phone }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
             </div>
             <div class="reviewbox__content__modal-contact__box">
                 <div class="title">
@@ -69,13 +84,23 @@
                     </div>
                     <p>EMAIL :</p>
                 </div>
-                <p class="content" id="email">{{ uni.email }}</p>
+                <p class="content" id="email">
+                    {% if uni.about %}
+                        {{ uni.email }}</p>
+                    {% else %}   
+                        N/A
+                    {% endif %}
             </div>
             <div class="reviewbox__content__modal-contact__box">
                 <i class="fas fa-paperclip"></i>
+                {% if uni.website %}
                 <a class="title" id="website" href="{{ uni.website }}">
-                    WEBSITE
-                </a>
+               {% else %}
+                <a class="title" id="website" href="#">
+               {% endif %}
+                   WEBSITE
+               </a>
+           
             </div>
         </div>
 
