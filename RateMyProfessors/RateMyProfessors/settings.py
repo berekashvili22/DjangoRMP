@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Account.apps.AccountConfig',
     'University.apps.UniversityConfig',
     'Lecturer.apps.LecturerConfig',
+    'Review.apps.ReviewConfig',
     'pages.apps.PagesConfig',
     'django.contrib.humanize',
     'django_filters'

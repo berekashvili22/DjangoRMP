@@ -1,9 +1,4 @@
 from django.db import models
-from Account.models import Account
-from django.utils import timezone
-
-
-# Create your models here.
 
 class University(models.Model):
          name = models.CharField(max_length=250, unique=True)
@@ -19,16 +14,4 @@ class University(models.Model):
          
          def __str__(self):
                   return self.short_name
-
-class UniReview(models.Model):
-         university = models.ForeignKey(University, on_delete=models.CASCADE)
-         user = models.ForeignKey(Account, on_delete=models.CASCADE, blank=True, null=True)
-         score = models.IntegerField(null=False, blank=False, verbose_name="All Ratings")
-         text = models.TextField(null=False, blank=False)
-         date_added = models.DateTimeField(blank=True, null=True, default=timezone.now)
-         
-         def __str__(self):
-                  return f'{self.university} review'
-         
-         
          

@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
-from Account.forms import UserUpdateForm, ImageUpdateForm
 from django.contrib import messages
+
+from Account.forms import UserUpdateForm, ImageUpdateForm
+
 from . utils import getErrorMessage
-from University.models import University, UniReview
-from University.utils import calcUniRating, getStarsPercentage
-from University.filters import UniReviewFilter, LecReviewFilter
+
+from Lecturer.models import Lecturer
+from University.models import University
+
+from Review.models import UniReview, LecturerReview
+from Review.utils import calcUniRating, getStarsPercentage
+from Review.filters import UniReviewFilter, LecReviewFilter
+
 from django.core.paginator import Paginator
-from Lecturer.models import Lecturer, LecturerReview
 
 def home(request):
     return render(request, 'pages/home.html')

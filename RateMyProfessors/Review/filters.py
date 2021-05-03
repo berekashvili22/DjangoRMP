@@ -1,6 +1,9 @@
 import django_filters
-from . models import UniReview, University
-from Lecturer.models import Lecturer, LecturerReview
+
+from . models import UniReview, LecturerReview
+from University.models import University
+from Lecturer.models import Lecturer
+
 from django_filters import CharFilter, ChoiceFilter
 
 

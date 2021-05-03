@@ -1,5 +1,4 @@
-from . models import UniReview
-from Lecturer.models import LecturerReview
+from . models import UniReview, LecturerReview
 
 
 def calcUniRating(uni=None, lec=None):
