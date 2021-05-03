@@ -17,7 +17,7 @@
             width: 90%;
             padding: 20px;
         }
-    
+
         &__header {
             width: 100%;
             margin-bottom: 30px;
@@ -25,15 +25,14 @@
             @include small {
                 width: 90%;
             }
-    
+
             h1 {
                 @include primaryTitle(mega);
             }
-    
+
             p {
                 @include mutedText(m);
                 padding-top: 15px;
-                
             }
         }
 
@@ -51,7 +50,7 @@
                     width: 100%;
                     margin-bottom: 10px;
                     @include primaryTitle(m);
-                    
+
                     @include small {
                         width: 90%;
                     }
@@ -95,7 +94,6 @@
                     &:hover {
                         background-color: #000;
                     }
-
                 }
 
                 & .errorlist {
@@ -144,9 +142,8 @@
                 @include small {
                     padding-bottom: 50px;
                     width: 90%;
-
                 }
-                
+
                 & small {
                     @include mutedText(s);
                 }
@@ -157,30 +154,61 @@
                     color: $secondary-color;
                 }
             }
-
         }
-    
     }
-    
+
     .register {
         margin-top: 50px;
     }
 
-    // &__shape {
-    //     clip-path: circle(35.7% at 11% 100%);
-    //     clip-path: circle(43.7% at 87% 87%);
-    //     clip-path: circle(35.1% at 94% 95%);
-    //     background-color: $light-pink;
-    //     width: 100%;
-    //     height: 100%;
-    //     position: absolute;
-    //     z-index: -1;
-    //     bottom: 0;
-    // }
+    .updateForm {
+        margin: 0px;
 
+        & text,
+        a {
+            display: none;
+        }
 
+        & .img-upload {
+            position: relative;
+
+            & input {
+                position: absolute;
+                top: 25px;
+                opacity: 0;
+                z-index: 3;
+                cursor: pointer;
+                background-color: red;
+            }
+
+            & .uploadBtn {
+                position: absolute;
+                top: 25px;
+                background-color: #fff;
+                width: 100%;
+                height: 50px;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // border: 1px solid $;
+
+                & h4 {
+                    @include primaryTitle(m);
+                }
+
+                & i {
+                    margin-left: 5px;
+                }
+
+                &:hover {
+                    @include transition-ease;
+                    background-color: yellow;
+                }
+            }
+        }
+    }
 }
-
 
 .reset-form {
     & ul {

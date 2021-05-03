@@ -7,12 +7,12 @@
     & .logo-container {
         @include flex(center, row);
         width: 200px;
-        
+
         & .logo {
             @include flex(space-between, row);
             font-family: $logo-font-family;
             color: $primary-color;
-            
+
             font-size: size(mega);
 
             & p {
@@ -52,6 +52,58 @@
 
         .auth-ul {
             width: 200px;
+
+            & #authUserNav {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                & i {
+                    cursor: pointer;
+                    padding-left: 4px;
+                    padding-bottom: 5px;
+                }
+            }
+
+            & .navDropDownMenu {
+                position: absolute;
+                background-color: #fff;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+                bottom: -200px;
+                right: 0;
+                width: 240px;
+                height: 180px;
+                flex-direction: column;
+                z-index: 100;
+                padding: 20px;
+
+                &__item {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-bottom: 1px solid rgb(235, 235, 235);
+                    padding: 15px 0px;
+
+                    & .email {
+                        font-size: size(s);
+                    }
+
+                    & .profileLink {
+                        margin-bottom: 8px;
+                    }
+
+                    & .logout {
+                        border-bottom: none;
+                        color: $red;
+                    }
+                }
+
+                & .logout-item {
+                    border-bottom: none;
+                }
+            }
 
             & #singUpBtn {
                 background-color: $secondary-color;

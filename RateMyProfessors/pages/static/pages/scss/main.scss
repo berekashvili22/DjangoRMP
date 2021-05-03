@@ -1,9 +1,15 @@
 @import './reset';
+@import './media';
 @import './variables';
+@import './messages';
 @import './nav';
 @import './home';
 @import './footer';
 @import './universities';
+@import './lecturers';
+@import './auth';
+@import './university';
+@import './profile';
 
 body {
     font-family: $primary-font-family;

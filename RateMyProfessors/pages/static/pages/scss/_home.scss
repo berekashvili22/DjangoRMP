@@ -27,10 +27,6 @@
                 font-family: $logo-font-family;
                 cursor: pointer;
                 @include transition-ease;
-
-                &:hover {
-                    background-color: rgba(0, 0, 0, 0.164);
-                }
             }
 
             &--subtitle {
