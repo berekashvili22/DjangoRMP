@@ -259,3 +259,4 @@ Tests/images/sunraster
 .env.example
 .env.local
 .env.staging
+.prettierrc
