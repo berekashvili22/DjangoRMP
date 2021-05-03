@@ -3,6 +3,9 @@ from Account.forms import UserUpdateForm, ImageUpdateForm
 from django.contrib import messages
 from . utils import getErrorMessage
 from University.models import University, UniReview
+from University.utils import calcUniRating, getStarsPercentage
+from University.filters import UniReviewFilter
+from django.core.paginator import Paginator
 
 
 def home(request):
@@ -22,33 +25,39 @@ def lecturers(request):
 
 
 def university(request, id):
+    # curr uni
     uni = University.objects.get(id=id)
+    # all review of curr uni
     reviews = UniReview.objects.filter(university=uni)
-    canRate = True
-    userReview = UniReview.objects.filter(university=uni, user=request.user)
-    if userReview:
-        canRate = False
-    
+    # all review count of curr uni
+    reviewsCount = reviews.count()
+    # find if user can vote
+    canVote = False if UniReview.objects.filter(university=uni, user=request.user) else True
+    # get curr uni rating
+    rating = calcUniRating(uni)
+    # get curr uni stars percentage
+    starsPercentage = getStarsPercentage(uni)
 
-    stars1 = UniReview.objects.filter(university=uni, score=1).count()
-    stars2 = UniReview.objects.filter(university=uni, score=2).count()
-    stars3 = UniReview.objects.filter(university=uni, score=3).count()
-    stars4 = UniReview.objects.filter(university=uni, score=4).count()
-    stars5 = UniReview.objects.filter(university=uni, score=5).count()
+    # filter
+    myFilter = UniReviewFilter(request.GET, queryset=reviews)
+    reviews = myFilter.qs
 
-    total = stars1+stars2+stars3+stars4+stars5
-    rating = 'N/A'
-    if total != 0:        
-        rating = (5*stars5 + 4*stars4 + 3*stars3 + 2*stars2 + 1*stars1) / (total)
-        rating = "{:.1f}".format(rating)
-    
-    print(rating)
+
+    # pagination
+    paginator = Paginator(reviews, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     
     context = {
         'uni': uni,
         'reviews': reviews,
-        'canRate': canRate,
-        'rating': rating
+        'reviewsCount': reviewsCount,
+        'canVote': canVote,
+        'rating': rating,
+        'starsPercentage': starsPercentage,
+        'myFilter': myFilter,
+        'page_obj': page_obj
     }
     
     

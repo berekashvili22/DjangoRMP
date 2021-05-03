@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'University.apps.UniversityConfig',
     'pages.apps.PagesConfig',
     'django.contrib.humanize',
+    'django_filters'
 ]
 
 MIDDLEWARE = [

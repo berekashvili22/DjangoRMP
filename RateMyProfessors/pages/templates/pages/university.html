@@ -101,12 +101,13 @@
                     <h3 class="rating-box__overview__title">
                         University Rating
                     </h3>
-                    <h2 class="rating-box__overview__subtitle">3431 ratings</h2>
+                    <h2 class="rating-box__overview__subtitle">{{reviewsCount}} reviews</h2>
                 </div>
                 <div class="rating-bars">
+                    <!-- 5 star -->
                     <div class="rating-bars__line">
                         <div class="rating-bars__line__bar-cont">
-                            <div class="bar-1"></div>
+                            <div class="barline_inner" style="width: {{starsPercentage.s5}}%;"></div>
                         </div>
                         <div class="rating-bars__line--stars-cont">
                             <i class="fas fa-star fa-sm filled"></i>
@@ -119,13 +120,13 @@
                             class="rating-bars__line--percentage"
                             style="padding-left: 5px"
                         >
-                            54%
+                        {{starsPercentage.s5}}%
                         </p>
                     </div>
-
+                    <!-- 4 star -->
                     <div class="rating-bars__line">
                         <div class="rating-bars__line__bar-cont">
-                            <div class="bar-2"></div>
+                            <div class="barline_inner" style="width: {{starsPercentage.s4}}%;"></div>
                         </div>
                         <div class="rating-bars__line--stars-cont">
                             <i class="fas fa-star fa-sm filled"></i>
@@ -138,13 +139,13 @@
                             class="rating-bars__line--percentage"
                             style="padding-left: 5px"
                         >
-                            54%
+                            {{starsPercentage.s4}}%
                         </p>
                     </div>
-
+                    <!-- 3 star -->
                     <div class="rating-bars__line">
                         <div class="rating-bars__line__bar-cont">
-                            <div class="bar-3"></div>
+                            <div class="barline_inner" style="width: {{starsPercentage.s3}}%;"></div>
                         </div>
                         <div class="rating-bars__line--stars-cont">
                             <i class="fas fa-star fa-sm filled"></i>
@@ -157,13 +158,13 @@
                             class="rating-bars__line--percentage"
                             style="padding-left: 5px"
                         >
-                            54%
+                            {{starsPercentage.s3}}%
                         </p>
                     </div>
-
+                    <!-- 2 star -->
                     <div class="rating-bars__line">
                         <div class="rating-bars__line__bar-cont">
-                            <div class="bar-4"></div>
+                            <div class="barline_inner" style="width: {{starsPercentage.s2}}%;"></div>
                         </div>
                         <div class="rating-bars__line--stars-cont">
                             <i class="fas fa-star fa-sm filled"></i>
@@ -176,13 +177,13 @@
                             class="rating-bars__line--percentage"
                             style="padding-left: 5px"
                         >
-                            54%
+                            {{starsPercentage.s2}}%
                         </p>
                     </div>
-
+                    <!-- 1 star -->
                     <div class="rating-bars__line">
                         <div class="rating-bars__line__bar-cont">
-                            <div class="bar-5"></div>
+                            <div class="barline_inner" style="width: {{starsPercentage.s1}}%;"></div>
                         </div>
                         <div class="rating-bars__line--stars-cont">
                             <i class="fas fa-star fa-sm filled"></i>
@@ -195,14 +196,14 @@
                             class="rating-bars__line--percentage"
                             style="padding-left: 5px"
                         >
-                            54%
+                            {{starsPercentage.s1}}%
                         </p>
                     </div>
                 </div>
             </div>
             <!-- reviewInfo  reviewForm-->
             <div class="review-form" id="reviewForm">
-                {% if canRate %}
+                {% if canVote %}
                 <form
                     action="{% url 'university' uni.id %}"
                     class="createReviewForm"
@@ -257,34 +258,20 @@
                 </button>
             </div>
 
-            <div class="reviews-header">
+            <form method="GET" class="reviews-header">
+
                 <h2 class="reviews-header__title">Reviews</h2>
                 <div class="reviews-header__search-box">
-                    <input
-                        type="text"
-                        class="reviews-header__search-box--input"
-                        placeholder="Search reviews"
-                    />
+                    {{myFilter.form.text}}
                     <button class="reviews-header__search-box--button">
                         <i class="fas fa-search"></i>
                     </button>
-                    <select
-                        name="rating-search"
-                        id="ratingSearch"
-                        class="reviews-header__search-box--rating-filter"
-                    >
-                        <option value="" selected>All ratings</option>
-                        <option value="">Five stars</option>
-                        <option value="">Four stars</option>
-                        <option value="">Three stars</option>
-                        <option value="">Two stars</option>
-                        <option value="">One stars</option>
-                    </select>
+                    {{myFilter.form.score}}
                 </div>
-            </div>
+            </form>
 
             <div class="reviews-box">
-                {% if reviews %} {% for review in reviews %}
+                {% if reviews %} {% for review in page_obj %}
                 <div class="reviews-box__review">
                     <div class="reviews-box__review__profile-wrap">
                         <div
@@ -376,6 +363,36 @@
                 {% endfor %} {% else %}
                 <p>no reviews available</p>
                 {% endif %}
+                    <!-- pagination -->
+                    <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1" class="pagination-btn-outline-dark"><i class="fas fa-angle-double-left"></i>
+
+                            </a>
+                            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-left"></i>
+
+                            </a>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <a href="?page={{ num }}" class="pagination-btn-outline-dark active">{{ num }}</a>
+                        {% elif num > page_obj.number|add:'-3' and num > page_obj.number|add:'3' %}
+                            <a href="?page={{ num }}" class="pagination-btn-outline-dark">{{ num }}</a>
+                        {% endif %}
+                        {% endfor %}    
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-right"></i>
+
+                            </a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-btn-outline-dark"><i class="fas fa-angle-double-right"></i>
+
+                            </a>
+                        {% endif %}
+                    </span>
+                </div>
+
             </div>
         </div>
     </div>

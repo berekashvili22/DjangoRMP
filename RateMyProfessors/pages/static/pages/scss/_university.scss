@@ -14,6 +14,18 @@
         display: flex;
         flex-direction: column;
 
+        @include large {
+            width: 80vw;
+        }
+
+        @include tablet {
+            width: 90vw;
+        }
+
+        @include small {
+            width: 100vw;
+        }
+
         &--header-box {
             width: 100%;
             height: 150px;
@@ -26,6 +38,15 @@
                 position: relative;
                 width: 300px;
                 height: 100%;
+
+                @include tablet {
+                    width: 150px;
+                    margin-right: 10px;
+                }
+
+                @include small {
+                    width: 130px;
+                }
 
                 & .logo-circle {
                     display: flex;
@@ -42,10 +63,36 @@
                     right: 50%;
                     transform: translateX(50%);
 
+                    @include medium {
+                        width: 140px;
+                        height: 140px;
+                        top: -30px;
+                    }
+
+                    @include tablet {
+                        width: 110px;
+                        height: 110px;
+                        top: 20px;
+                    }
+
+                    @include small {
+                        width: 90px;
+                        height: 90px;
+                        top: 30px;
+                    }
+
                     &__logo {
                         width: auto;
                         height: 100%;
                         padding: 30px;
+
+                        @include tablet {
+                            padding: 25px;
+                        }
+
+                        @include small {
+                            padding: 20px;
+                        }
                     }
                 }
             }
@@ -64,6 +111,19 @@
                     &--title {
                         @include primaryTitle(mega);
                         margin-bottom: 20px;
+
+                        @include medium {
+                            @include primaryTitle(xxl);
+                        }
+
+                        @include tablet {
+                            padding-top: 20px;
+                            @include primaryTitle(l);
+                        }
+
+                        @include small {
+                            @include primaryTitle(m);
+                        }
                     }
 
                     &--short-title {
@@ -72,11 +132,31 @@
                         font-weight: bold;
                         letter-spacing: 1px;
 
+                        @include medium {
+                            font-size: size(r);
+                        }
+
+                        @include tablet {
+                            font-size: size(m);
+                        }
+
+                        @include small {
+                            font-size: size(xm);
+                        }
+
                         & span {
                             padding: 5px;
                             border-radius: 5px;
                             background-color: $secondary-bg-color;
                             color: $background-color;
+
+                            @include tablet {
+                                padding: 3px;
+                            }
+
+                            @include small {
+                                font-size: size(s);
+                            }
                         }
                     }
                 }
@@ -98,6 +178,10 @@
                 font-size: size(m);
                 font-weight: bold;
                 cursor: pointer;
+
+                @include medium {
+                    font-size: size(xm);
+                }
             }
 
             & .activeNavBtn {
@@ -140,10 +224,18 @@
             padding-top: 40px;
             display: none;
 
+            @include small {
+                padding: 20px;
+            }
+
             &__box {
                 display: flex;
                 align-items: center;
                 margin-bottom: 30px;
+
+                @include small {
+                    height: 50px;
+                }
 
                 & .title {
                     color: $primary-color;
@@ -153,13 +245,38 @@
                     display: flex;
                     font-weight: 500;
 
+                    @include tablet {
+                        font-size: size(xm);
+                        margin-right: 20px;
+                        width: 100px;
+                    }
+
+                    @include small {
+                        margin-right: 10px;
+                        font-size: size(s);
+                    }
+
                     & .icon-cont {
                         width: 25px;
+
+                        @include small {
+                            width: 20px;
+                        }
                     }
                 }
 
                 & .content {
                     color: $primary-color;
+
+                    @include tablet {
+                        width: 300px;
+                        font-size: size(xm);
+                    }
+
+                    @include small {
+                        width: 200px;
+                        font-size: size(s);
+                    }
                 }
 
                 & #website {
@@ -176,6 +293,11 @@
             border: 1px solid rgb(207, 207, 207);
             border-top: none;
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);
+            margin-bottom: 10px;
+
+            @include small {
+                padding: 15px;
+            }
 
             & .review-toggle-btn {
                 width: 100%;
@@ -315,6 +437,10 @@
                 height: 150px;
                 align-items: center;
 
+                @include small {
+                    justify-content: space-between;
+                }
+
                 &__overview {
                     display: flex;
                     width: 140px;
@@ -324,9 +450,17 @@
                     align-items: center;
                     flex-direction: column;
 
+                    @include small {
+                        margin-right: 0;
+                    }
+
                     &__score {
                         @include primaryTitle(giant);
                         color: $secondary-color;
+
+                        @include tablet {
+                            @include primaryTitle(giant);
+                        }
                     }
 
                     &__starwrap {
@@ -374,6 +508,14 @@
                 flex-direction: column;
                 justify-content: space-between;
 
+                @include tablet {
+                    width: 50%;
+                }
+
+                @include small {
+                    width: 50%;
+                }
+
                 &__line {
                     display: flex;
                     width: 100%;
@@ -389,28 +531,16 @@
                         color: white;
                         margin-right: 20px;
 
-                        .bar-5 {
-                            width: 60%;
-                            height: 7px;
-                            background-color: #b68973;
+                        @include medium {
+                            width: 40%;
                         }
-                        .bar-4 {
-                            width: 30%;
-                            height: 7px;
-                            background-color: #b68973;
+
+                        @include tablet {
+                            display: none;
                         }
-                        .bar-3 {
-                            width: 10%;
-                            height: 7px;
-                            background-color: #b68973;
-                        }
-                        .bar-2 {
-                            width: 4%;
-                            height: 7px;
-                            background-color: #b68973;
-                        }
-                        .bar-1 {
-                            width: 15%;
+
+                        .barline_inner {
+                            width: 0%;
                             height: 7px;
                             background-color: #b68973;
                         }
@@ -437,6 +567,10 @@
                 &__title {
                     @include primaryTitle(xl);
                     margin-bottom: 20px;
+
+                    @include tablet {
+                        @include primaryTitle(l);
+                    }
                 }
 
                 &__search-box {
@@ -446,7 +580,11 @@
                     justify-content: space-between;
                     position: relative;
 
-                    &--input {
+                    @include medium {
+                        flex-direction: column;
+                    }
+
+                    & input {
                         width: 80%;
                         height: 45px;
                         text-indent: 20px;
@@ -455,6 +593,10 @@
                         border-radius: 0px 7px 7px 0px;
                         border: 1px solid $secondary-color;
                         outline: none;
+
+                        @include medium {
+                            width: 100%;
+                        }
                     }
 
                     &--button {
@@ -466,17 +608,26 @@
                         color: white;
                         border-radius: 0px 7px 7px 0px;
 
+                        @include medium {
+                            right: 0%;
+                        }
+
                         &:hover {
                             @include transition-ease;
                             background-color: $primary-color;
                         }
                     }
 
-                    &--rating-filter {
+                    & select {
                         width: 15%;
                         border-radius: 3px;
                         padding: 10px;
                         color: $secondary-color;
+
+                        @include medium {
+                            width: 150px;
+                            margin: 20px 0px;
+                        }
                     }
                 }
             }
@@ -492,9 +643,17 @@
                     padding-bottom: 25px;
                     border-bottom: 1px solid #e9e9e9;
 
+                    @include small {
+                        flex-direction: column;
+                        padding: 10px;
+                    }
+
                     &__profile-wrap {
                         width: 80px;
-                        // background-color: yellow;
+
+                        @include small {
+                            margin-bottom: 10px;
+                        }
 
                         &__img-wrap {
                             width: 100%;
@@ -503,6 +662,11 @@
                                 width: 50px;
                                 height: 50px;
                                 border-radius: 50%;
+
+                                @include small {
+                                    width: 40px;
+                                    height: 40px;
+                                }
                             }
                         }
                     }
@@ -539,6 +703,10 @@
                                 &__date {
                                     padding-top: 2px;
                                     @include mutedText(xm);
+
+                                    @include small {
+                                        @include mutedText(s);
+                                    }
                                 }
                             }
                         }
