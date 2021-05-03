@@ -261,9 +261,9 @@ Tests/images/sunraster
 .env.staging
 .prettierrc
 
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-.scss
-*.scss
+.sass-cache*
+*.map
+
+**/.scss
+**/.scss/*
+**.scss**

@@ -24,6 +24,10 @@ def lecturers(request):
     return render(request, 'pages/lecturers.html')
 
 
+def lecturer(request, id):
+    return render(request, 'pages/lecturer.html')
+
+
 def university(request, id):
     # curr uni
     uni = University.objects.get(id=id)

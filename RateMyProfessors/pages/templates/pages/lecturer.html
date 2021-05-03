@@ -1,0 +1,75 @@
+{% extends 'pages/base.html' %} 
+{% load static %} 
+{% load humanize %}
+{% block content %}
+<div>
+         uni
+</div>
+
+<script type="text/javascript">
+    let navBtns = document.getElementsByClassName('nav-btn');
+    let detailBoxes = document.getElementsByClassName('uniDetailBox');
+
+    for (var i = 0; i < navBtns.length; i++) {
+        navBtns[i].addEventListener('click', function () {
+            clearNavBtns();
+            clearBoxes(this.dataset.id);
+            this.classList.add('activeNavBtn');
+        });
+    }
+
+    function clearNavBtns() {
+        for (let i = 0; i < navBtns.length; i++) {
+            navBtns[i].classList.remove('activeNavBtn');
+        }
+    }
+
+    function clearBoxes(boxId) {
+        for (let i = 0; i < detailBoxes.length; i++) {
+            detailBoxes[i].style.display = 'none';
+        }
+        document.getElementById(`${boxId}`).style.display = 'flex';
+    }
+
+    // review buttons
+    let toggleReviewBtn = document.getElementById('toggleReview');
+    let reviewInfo = document.getElementById('reviewInfo');
+    let reviewForm = document.getElementById('reviewForm');
+
+    // hide show review form
+    toggleReviewBtn.addEventListener('click', function () {
+        if (reviewInfo.style.display != 'none') {
+            reviewInfo.style.display = 'none';
+            reviewForm.style.display = 'flex';
+            toggleReviewBtn.innerText = 'Cancel';
+        } else {
+            reviewInfo.style.display = 'flex';
+            reviewForm.style.display = 'none';
+            toggleReviewBtn.innerText = 'Write review';
+        }
+    });
+
+    // get how many stars user voted on university
+    function getCheckedValue(star) {
+        var radios = document.getElementsByName(star);
+        for (i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                return radios[i].value;
+            }
+        }
+        return null;
+    }
+    // max rating available
+    const starsTotal = 5;
+    // get university overall rating
+    const universityRating = document.getElementById('rating').dataset.id;
+    // get percentage value of rating
+    const percentageRating = (universityRating / starsTotal) * 100;
+    // rounded percantage
+    const roundedPerntageRating = `${Math.round(percentageRating / 10) * 10}%`;
+    // set width of stars to percentage
+    document.querySelector('#ratingStars').style.width = roundedPerntageRating;
+    console.log(roundedPerntageRating);
+</script>
+
+{% endblock %}

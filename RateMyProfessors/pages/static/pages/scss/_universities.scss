@@ -33,7 +33,6 @@
             border: 1px solid #f2f8f9;
             position: relative;
 
-
             &:hover {
                 transition: all 0.2s ease-out;
                 box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
@@ -43,7 +42,7 @@
             }
 
             &:before {
-                content: "";
+                content: '';
                 position: absolute;
                 z-index: -1;
                 top: -16px;
@@ -55,14 +54,14 @@
                 transform: scale(2);
                 transform-origin: 50% 50%;
                 transition: transform 0.15s ease-out;
-              }
-
+            }
 
             & .logo-wrap {
                 width: 200px;
                 height: 100%;
                 @include flex(center, row);
                 border-right: 1px solid #cccccc;
+                margin: 3px;
 
                 & .logo {
                     max-width: 100%;

@@ -2,9 +2,9 @@
 {% load static %} 
 {% load humanize %}
 {% block content %}
-<div class="university">
-    <div class="university__content">
-        <div class="university__content--header-box">
+<div class="reviewbox">
+    <div class="reviewbox__content">
+        <div class="reviewbox__content--header-box">
             <div class="logo-wrap">
                 <div class="logo-circle">
                     <img
@@ -24,27 +24,27 @@
                 </div>
             </div>
         </div>
-        <div class="university__content--navigation-box">
+        <div class="reviewbox__content--navigation-box">
             <h2 class="nav-btn activeNavBtn" data-id="modalReview">Reviews</h2>
             <h2 class="nav-btn" data-id="modalContact">Contact</h2>
             <h2 class="nav-btn" data-id="modalAbout">About</h2>
         </div>
         <!-- modals -->
         <div
-            class="university__content__modal-about uniDetailBox"
+            class="reviewbox__content__modal-about uniDetailBox"
             id="modalAbout"
         >
-            <div class="university__content__modal-about--title">ABOUT US</div>
-            <div class="university__content__modal-about--text">
+            <div class="reviewbox__content__modal-about--title">ABOUT US</div>
+            <div class="reviewbox__content__modal-about--text">
                 {{ uni.about }}
             </div>
         </div>
 
         <div
-            class="university__content__modal-contact uniDetailBox"
+            class="reviewbox__content__modal-contact uniDetailBox"
             id="modalContact"
         >
-            <div class="university__content__modal-contact__box">
+            <div class="reviewbox__content__modal-contact__box">
                 <div class="title">
                     <div class="icon-cont">
                         <i class="fas fa-map-marker-alt"></i>
@@ -53,7 +53,7 @@
                 </div>
                 <p class="content" id="address">{{ uni.address }}</p>
             </div>
-            <div class="university__content__modal-contact__box">
+            <div class="reviewbox__content__modal-contact__box">
                 <div class="title">
                     <div class="icon-cont">
                         <i class="fas fa-mobile"></i>
@@ -62,7 +62,7 @@
                 </div>
                 <p class="content" id="telephone">{{ uni.phone }}</p>
             </div>
-            <div class="university__content__modal-contact__box">
+            <div class="reviewbox__content__modal-contact__box">
                 <div class="title">
                     <div class="icon-cont">
                         <i class="fas fa-envelope"></i>
@@ -71,7 +71,7 @@
                 </div>
                 <p class="content" id="email">{{ uni.email }}</p>
             </div>
-            <div class="university__content__modal-contact__box">
+            <div class="reviewbox__content__modal-contact__box">
                 <i class="fas fa-paperclip"></i>
                 <a class="title" id="website" href="{{ uni.website }}">
                     WEBSITE
@@ -80,7 +80,7 @@
         </div>
 
         <div
-            class="university__content__modal-review uniDetailBox"
+            class="reviewbox__content__modal-review uniDetailBox"
             id="modalReview"
         >
             <div class="rating-box" id="reviewInfo">

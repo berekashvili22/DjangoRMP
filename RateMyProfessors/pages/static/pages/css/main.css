@@ -701,7 +701,7 @@ button {
 }
 
 .universities__list-wrap__box:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   top: -16px;
@@ -737,6 +737,7 @@ button {
       -ms-flex-direction: row;
           flex-direction: row;
   border-right: 1px solid #cccccc;
+  margin: 3px;
 }
 
 .universities__list-wrap__box .logo-wrap .logo {
@@ -1321,7 +1322,7 @@ button {
   background-color: #ff7474;
 }
 
-.university {
+.reviewbox {
   min-height: 90vh;
   background-color: #ffffff;
   display: -webkit-box;
@@ -1336,7 +1337,7 @@ button {
           align-items: center;
 }
 
-.university__content {
+.reviewbox__content {
   margin-top: 100px;
   width: 60vw;
   display: -webkit-box;
@@ -1349,24 +1350,24 @@ button {
 }
 
 @media screen and (max-width: 1200px) {
-  .university__content {
+  .reviewbox__content {
     width: 80vw;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .university__content {
+  .reviewbox__content {
     width: 90vw;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content {
+  .reviewbox__content {
     width: 100vw;
   }
 }
 
-.university__content--header-box {
+.reviewbox__content--header-box {
   width: 100%;
   height: 150px;
   display: -webkit-box;
@@ -1378,26 +1379,26 @@ button {
   background-color: #ffffff;
 }
 
-.university__content--header-box .logo-wrap {
+.reviewbox__content--header-box .logo-wrap {
   position: relative;
   width: 300px;
   height: 100%;
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .logo-wrap {
+  .reviewbox__content--header-box .logo-wrap {
     width: 150px;
     margin-right: 10px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .logo-wrap {
+  .reviewbox__content--header-box .logo-wrap {
     width: 130px;
   }
 }
 
-.university__content--header-box .logo-wrap .logo-circle {
+.reviewbox__content--header-box .logo-wrap .logo-circle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1417,7 +1418,7 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content--header-box .logo-wrap .logo-circle {
+  .reviewbox__content--header-box .logo-wrap .logo-circle {
     width: 140px;
     height: 140px;
     top: -30px;
@@ -1425,7 +1426,7 @@ button {
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .logo-wrap .logo-circle {
+  .reviewbox__content--header-box .logo-wrap .logo-circle {
     width: 110px;
     height: 110px;
     top: 20px;
@@ -1433,32 +1434,32 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .logo-wrap .logo-circle {
+  .reviewbox__content--header-box .logo-wrap .logo-circle {
     width: 90px;
     height: 90px;
     top: 30px;
   }
 }
 
-.university__content--header-box .logo-wrap .logo-circle__logo {
+.reviewbox__content--header-box .logo-wrap .logo-circle__logo {
   width: auto;
   height: 100%;
   padding: 30px;
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .logo-wrap .logo-circle__logo {
+  .reviewbox__content--header-box .logo-wrap .logo-circle__logo {
     padding: 25px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .logo-wrap .logo-circle__logo {
+  .reviewbox__content--header-box .logo-wrap .logo-circle__logo {
     padding: 20px;
   }
 }
 
-.university__content--header-box .details {
+.reviewbox__content--header-box .details {
   width: 80%;
   margin-top: 35px;
   display: -webkit-box;
@@ -1470,7 +1471,7 @@ button {
           flex-direction: column;
 }
 
-.university__content--header-box .details__top-wrap {
+.reviewbox__content--header-box .details__top-wrap {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1481,21 +1482,21 @@ button {
           flex-direction: column;
 }
 
-.university__content--header-box .details__top-wrap--title {
+.reviewbox__content--header-box .details__top-wrap--title {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content--header-box .details__top-wrap--title {
+  .reviewbox__content--header-box .details__top-wrap--title {
     font-size: 26px;
     font-weight: 700;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .details__top-wrap--title {
+  .reviewbox__content--header-box .details__top-wrap--title {
     padding-top: 20px;
     font-size: 20px;
     font-weight: 700;
@@ -1503,13 +1504,13 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .details__top-wrap--title {
+  .reviewbox__content--header-box .details__top-wrap--title {
     font-size: 16px;
     font-weight: 700;
   }
 }
 
-.university__content--header-box .details__top-wrap--short-title {
+.reviewbox__content--header-box .details__top-wrap--short-title {
   color: #393e46;
   font-size: 20px;
   font-weight: bold;
@@ -1517,24 +1518,24 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content--header-box .details__top-wrap--short-title {
+  .reviewbox__content--header-box .details__top-wrap--short-title {
     font-size: 18px;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .details__top-wrap--short-title {
+  .reviewbox__content--header-box .details__top-wrap--short-title {
     font-size: 16px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .details__top-wrap--short-title {
+  .reviewbox__content--header-box .details__top-wrap--short-title {
     font-size: 14px;
   }
 }
 
-.university__content--header-box .details__top-wrap--short-title span {
+.reviewbox__content--header-box .details__top-wrap--short-title span {
   padding: 5px;
   border-radius: 5px;
   background-color: #00adb5;
@@ -1542,18 +1543,18 @@ button {
 }
 
 @media screen and (max-width: 700px) {
-  .university__content--header-box .details__top-wrap--short-title span {
+  .reviewbox__content--header-box .details__top-wrap--short-title span {
     padding: 3px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content--header-box .details__top-wrap--short-title span {
+  .reviewbox__content--header-box .details__top-wrap--short-title span {
     font-size: 12px;
   }
 }
 
-.university__content--navigation-box {
+.reviewbox__content--navigation-box {
   height: 60px;
   width: 100%;
   margin-top: 20px;
@@ -1569,7 +1570,7 @@ button {
   margin-bottom: 10px;
 }
 
-.university__content--navigation-box .nav-btn {
+.reviewbox__content--navigation-box .nav-btn {
   color: #dddddd;
   font-size: 16px;
   font-weight: bold;
@@ -1577,12 +1578,12 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content--navigation-box .nav-btn {
+  .reviewbox__content--navigation-box .nav-btn {
     font-size: 14px;
   }
 }
 
-.university__content--navigation-box .activeNavBtn {
+.reviewbox__content--navigation-box .activeNavBtn {
   border-bottom: 1px solid #fff;
   padding-bottom: 5px;
   color: #ffffff;
@@ -1590,7 +1591,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-.university__content__modal-about {
+.reviewbox__content__modal-about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1606,14 +1607,14 @@ button {
   display: none;
 }
 
-.university__content__modal-about--title {
+.reviewbox__content__modal-about--title {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.university__content__modal-about--text {
+.reviewbox__content__modal-about--text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1621,7 +1622,7 @@ button {
   font-family: 'Raleway', sans-serif;
 }
 
-.university__content__modal-contact {
+.reviewbox__content__modal-contact {
   border: 1px solid #cfcfcf;
   border-top: none;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);
@@ -1637,12 +1638,12 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-contact {
+  .reviewbox__content__modal-contact {
     padding: 20px;
   }
 }
 
-.university__content__modal-contact__box {
+.reviewbox__content__modal-contact__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1653,12 +1654,12 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-contact__box {
+  .reviewbox__content__modal-contact__box {
     height: 50px;
   }
 }
 
-.university__content__modal-contact__box .title {
+.reviewbox__content__modal-contact__box .title {
   color: #222831;
   font-size: 16px;
   width: 170px;
@@ -1670,7 +1671,7 @@ button {
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-contact__box .title {
+  .reviewbox__content__modal-contact__box .title {
     font-size: 14px;
     margin-right: 20px;
     width: 100px;
@@ -1678,46 +1679,46 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-contact__box .title {
+  .reviewbox__content__modal-contact__box .title {
     margin-right: 10px;
     font-size: 12px;
   }
 }
 
-.university__content__modal-contact__box .title .icon-cont {
+.reviewbox__content__modal-contact__box .title .icon-cont {
   width: 25px;
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-contact__box .title .icon-cont {
+  .reviewbox__content__modal-contact__box .title .icon-cont {
     width: 20px;
   }
 }
 
-.university__content__modal-contact__box .content {
+.reviewbox__content__modal-contact__box .content {
   color: #222831;
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-contact__box .content {
+  .reviewbox__content__modal-contact__box .content {
     width: 300px;
     font-size: 14px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-contact__box .content {
+  .reviewbox__content__modal-contact__box .content {
     width: 200px;
     font-size: 12px;
   }
 }
 
-.university__content__modal-contact__box #website {
+.reviewbox__content__modal-contact__box #website {
   color: #3373bd;
   padding-left: 10px;
 }
 
-.university__content__modal-review {
+.reviewbox__content__modal-review {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1734,12 +1735,12 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review {
+  .reviewbox__content__modal-review {
     padding: 15px;
   }
 }
 
-.university__content__modal-review .review-toggle-btn {
+.reviewbox__content__modal-review .review-toggle-btn {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1747,7 +1748,7 @@ button {
   margin: 70px 0px 15px 0px;
 }
 
-.university__content__modal-review .review-toggle-btn__btn {
+.reviewbox__content__modal-review .review-toggle-btn__btn {
   height: 40px;
   width: 150px;
   background-color: #00adb5;
@@ -1767,13 +1768,13 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-.university__content__modal-review .review-toggle-btn__btn:hover {
+.reviewbox__content__modal-review .review-toggle-btn__btn:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #393e46;
 }
 
-.university__content__modal-review .review-form {
+.reviewbox__content__modal-review .review-form {
   height: 150px;
   display: none;
   -webkit-box-orient: vertical;
@@ -1783,7 +1784,7 @@ button {
   width: 100%;
 }
 
-.university__content__modal-review .review-form .createReviewForm {
+.reviewbox__content__modal-review .review-form .createReviewForm {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1794,7 +1795,7 @@ button {
           flex-direction: column;
 }
 
-.university__content__modal-review .review-form .createReviewForm__btn {
+.reviewbox__content__modal-review .review-form .createReviewForm__btn {
   height: 35px;
   background-color: #393e46;
   color: #fff;
@@ -1804,13 +1805,13 @@ button {
   border-radius: 0px 0px 5px 5px;
 }
 
-.university__content__modal-review .review-form .createReviewForm__btn:hover {
+.reviewbox__content__modal-review .review-form .createReviewForm__btn:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: black;
 }
 
-.university__content__modal-review .review-form .createReviewForm__anounymous {
+.reviewbox__content__modal-review .review-form .createReviewForm__anounymous {
   font-size: 14px;
   font-weight: 700;
   color: #393e46;
@@ -1825,15 +1826,15 @@ button {
           align-items: center;
 }
 
-.university__content__modal-review .review-form .createReviewForm__anounymous label {
+.reviewbox__content__modal-review .review-form .createReviewForm__anounymous label {
   margin-right: 5px;
 }
 
-.university__content__modal-review .review-form .createReviewForm__anounymous input {
+.reviewbox__content__modal-review .review-form .createReviewForm__anounymous input {
   margin-right: 10px;
 }
 
-.university__content__modal-review .review-form .createReviewForm__textcont {
+.reviewbox__content__modal-review .review-form .createReviewForm__textcont {
   border: none;
   border: 1px solid #c0b8c3;
   padding: 10px;
@@ -1842,7 +1843,7 @@ button {
   border-radius: 5px 5px 0px 0px;
 }
 
-.university__content__modal-review .review-form .createReviewForm__label {
+.reviewbox__content__modal-review .review-form .createReviewForm__label {
   font-size: 14px;
   font-weight: 700;
   color: #393e46;
@@ -1851,7 +1852,7 @@ button {
   margin: 10px 0px;
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont {
   padding-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1863,18 +1864,18 @@ button {
           flex-direction: row-reverse;
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont input {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont input {
   display: none;
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont label {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont label {
   display: block;
   cursor: pointer;
   width: 30px;
   position: relative;
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont label:before {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont label:before {
   content: '\f006';
   font-family: fontAwesome;
   position: relative;
@@ -1882,7 +1883,7 @@ button {
   color: #ffa534;
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont label:after {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont label:after {
   content: '\f005';
   font-family: fontAwesome;
   position: absolute;
@@ -1895,13 +1896,13 @@ button {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
 }
 
-.university__content__modal-review .review-form .createReviewForm__star-cont label:hover:after,
-.university__content__modal-review .review-form .createReviewForm__star-cont label:hover ~ label:after,
-.university__content__modal-review .review-form .createReviewForm__star-cont input:checked ~ label:after {
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont label:hover:after,
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont label:hover ~ label:after,
+.reviewbox__content__modal-review .review-form .createReviewForm__star-cont input:checked ~ label:after {
   opacity: 1;
 }
 
-.university__content__modal-review .rating-box {
+.reviewbox__content__modal-review .rating-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1912,14 +1913,14 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .rating-box {
+  .reviewbox__content__modal-review .rating-box {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
 }
 
-.university__content__modal-review .rating-box__overview {
+.reviewbox__content__modal-review .rating-box__overview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1938,37 +1939,37 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .rating-box__overview {
+  .reviewbox__content__modal-review .rating-box__overview {
     margin-right: 0;
   }
 }
 
-.university__content__modal-review .rating-box__overview__score {
+.reviewbox__content__modal-review .rating-box__overview__score {
   font-size: 62px;
   font-weight: 700;
   color: #393e46;
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-review .rating-box__overview__score {
+  .reviewbox__content__modal-review .rating-box__overview__score {
     font-size: 62px;
     font-weight: 700;
   }
 }
 
-.university__content__modal-review .rating-box__overview__starwrap {
+.reviewbox__content__modal-review .rating-box__overview__starwrap {
   position: relative;
   display: inline-block;
 }
 
-.university__content__modal-review .rating-box__overview__starwrap::before {
+.reviewbox__content__modal-review .rating-box__overview__starwrap::before {
   content: '\f005 \00a0 \f005 \00a0 \f005 \00a0 \f005 \00a0 \f005';
   font-family: 'Font Awesome 5 Free';
   font-weight: 800;
   color: #ccc;
 }
 
-.university__content__modal-review .rating-box__overview__starwrap__inner {
+.reviewbox__content__modal-review .rating-box__overview__starwrap__inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -1977,25 +1978,25 @@ button {
   width: 0;
 }
 
-.university__content__modal-review .rating-box__overview__starwrap__inner::before {
+.reviewbox__content__modal-review .rating-box__overview__starwrap__inner::before {
   content: '\f005 \00a0 \f005 \00a0 \f005 \00a0 \f005 \00a0 \f005';
   font-family: 'Font Awesome 5 Free';
   font-weight: 800;
   color: #ffa534;
 }
 
-.university__content__modal-review .rating-box__overview__title {
+.reviewbox__content__modal-review .rating-box__overview__title {
   font-size: 14px;
   font-weight: 700;
   color: #393e46;
 }
 
-.university__content__modal-review .rating-box__overview__subtitle {
+.reviewbox__content__modal-review .rating-box__overview__subtitle {
   font-size: 14px;
   color: #c0b8c3;
 }
 
-.university__content__modal-review .rating-bars {
+.reviewbox__content__modal-review .rating-bars {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2010,18 +2011,18 @@ button {
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-review .rating-bars {
+  .reviewbox__content__modal-review .rating-bars {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .rating-bars {
+  .reviewbox__content__modal-review .rating-bars {
     width: 50%;
   }
 }
 
-.university__content__modal-review .rating-bars__line {
+.reviewbox__content__modal-review .rating-bars__line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2032,7 +2033,7 @@ button {
           align-items: center;
 }
 
-.university__content__modal-review .rating-bars__line__bar-cont {
+.reviewbox__content__modal-review .rating-bars__line__bar-cont {
   width: 60%;
   margin-top: 3px;
   background-color: #f1f1f1;
@@ -2047,24 +2048,24 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content__modal-review .rating-bars__line__bar-cont {
+  .reviewbox__content__modal-review .rating-bars__line__bar-cont {
     width: 40%;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-review .rating-bars__line__bar-cont {
+  .reviewbox__content__modal-review .rating-bars__line__bar-cont {
     display: none;
   }
 }
 
-.university__content__modal-review .rating-bars__line__bar-cont .barline_inner {
+.reviewbox__content__modal-review .rating-bars__line__bar-cont .barline_inner {
   width: 0%;
   height: 7px;
   background-color: #b68973;
 }
 
-.university__content__modal-review .rating-bars__line--percentage {
+.reviewbox__content__modal-review .rating-bars__line--percentage {
   padding-top: 4px;
   margin-left: 5px;
   font-family: 'Roboto', sans-serif;
@@ -2072,7 +2073,7 @@ button {
   font-size: 14px;
 }
 
-.university__content__modal-review .reviews-header {
+.reviewbox__content__modal-review .reviews-header {
   margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2084,20 +2085,20 @@ button {
           flex-direction: column;
 }
 
-.university__content__modal-review .reviews-header__title {
+.reviewbox__content__modal-review .reviews-header__title {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 @media screen and (max-width: 700px) {
-  .university__content__modal-review .reviews-header__title {
+  .reviewbox__content__modal-review .reviews-header__title {
     font-size: 20px;
     font-weight: 700;
   }
 }
 
-.university__content__modal-review .reviews-header__search-box {
+.reviewbox__content__modal-review .reviews-header__search-box {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2109,7 +2110,7 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content__modal-review .reviews-header__search-box {
+  .reviewbox__content__modal-review .reviews-header__search-box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2117,7 +2118,7 @@ button {
   }
 }
 
-.university__content__modal-review .reviews-header__search-box input {
+.reviewbox__content__modal-review .reviews-header__search-box input {
   width: 80%;
   height: 45px;
   text-indent: 20px;
@@ -2129,12 +2130,12 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content__modal-review .reviews-header__search-box input {
+  .reviewbox__content__modal-review .reviews-header__search-box input {
     width: 100%;
   }
 }
 
-.university__content__modal-review .reviews-header__search-box--button {
+.reviewbox__content__modal-review .reviews-header__search-box--button {
   position: absolute;
   height: 45px;
   width: 70px;
@@ -2145,18 +2146,18 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content__modal-review .reviews-header__search-box--button {
+  .reviewbox__content__modal-review .reviews-header__search-box--button {
     right: 0%;
   }
 }
 
-.university__content__modal-review .reviews-header__search-box--button:hover {
+.reviewbox__content__modal-review .reviews-header__search-box--button:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #222831;
 }
 
-.university__content__modal-review .reviews-header__search-box select {
+.reviewbox__content__modal-review .reviews-header__search-box select {
   width: 15%;
   border-radius: 3px;
   padding: 10px;
@@ -2164,13 +2165,13 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-  .university__content__modal-review .reviews-header__search-box select {
+  .reviewbox__content__modal-review .reviews-header__search-box select {
     width: 150px;
     margin: 20px 0px;
   }
 }
 
-.university__content__modal-review .reviews-box {
+.reviewbox__content__modal-review .reviews-box {
   margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2181,7 +2182,7 @@ button {
           flex-direction: column;
 }
 
-.university__content__modal-review .reviews-box__review {
+.reviewbox__content__modal-review .reviews-box__review {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2191,7 +2192,7 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .reviews-box__review {
+  .reviewbox__content__modal-review .reviews-box__review {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2200,34 +2201,34 @@ button {
   }
 }
 
-.university__content__modal-review .reviews-box__review__profile-wrap {
+.reviewbox__content__modal-review .reviews-box__review__profile-wrap {
   width: 80px;
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .reviews-box__review__profile-wrap {
+  .reviewbox__content__modal-review .reviews-box__review__profile-wrap {
     margin-bottom: 10px;
   }
 }
 
-.university__content__modal-review .reviews-box__review__profile-wrap__img-wrap {
+.reviewbox__content__modal-review .reviews-box__review__profile-wrap__img-wrap {
   width: 100%;
 }
 
-.university__content__modal-review .reviews-box__review__profile-wrap__img-wrap__img {
+.reviewbox__content__modal-review .reviews-box__review__profile-wrap__img-wrap__img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .reviews-box__review__profile-wrap__img-wrap__img {
+  .reviewbox__content__modal-review .reviews-box__review__profile-wrap__img-wrap__img {
     width: 40px;
     height: 40px;
   }
 }
 
-.university__content__modal-review .reviews-box__review__review-box {
+.reviewbox__content__modal-review .reviews-box__review__review-box {
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2238,7 +2239,7 @@ button {
           flex-direction: column;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2249,40 +2250,40 @@ button {
   margin-bottom: 10px;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header__name-cont {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header__name-cont {
   width: 100%;
   margin-bottom: 10px;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header__name-cont__name {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header__name-cont__name {
   font-size: 18px;
   font-weight: 700;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header--rating {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header--rating {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header--rating__stars {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header--rating__stars {
   margin-right: 15px;
 }
 
-.university__content__modal-review .reviews-box__review__review-box__header--rating__date {
+.reviewbox__content__modal-review .reviews-box__review__review-box__header--rating__date {
   padding-top: 2px;
   font-size: 14px;
   color: #c0b8c3;
 }
 
 @media screen and (max-width: 450px) {
-  .university__content__modal-review .reviews-box__review__review-box__header--rating__date {
+  .reviewbox__content__modal-review .reviews-box__review__review-box__header--rating__date {
     font-size: 12px;
     color: #c0b8c3;
   }
 }
 
-.university__content__modal-review .reviews-box__review__review-box__text-wrap {
+.reviewbox__content__modal-review .reviews-box__review__review-box__text-wrap {
   width: 80%;
   line-height: 1.5rem;
   color: #393e46;
