@@ -314,11 +314,10 @@
                                 alt="User Image"
                                 class="reviews-box__review__profile-wrap__img-wrap__img"
                             />
+                            {% endif %}
                             <h3
                             class="reviews-box__review__review-box__header__name-cont__name-hidden"
                         >
-                            {% endif %}
-
                             {% if review.user.username %}
                                 {{review.user.username }} 
                             {% else %}
@@ -328,6 +327,12 @@
                         </div>
                     </div>
                     <div class="reviews-box__review__review-box">
+                        {% if review.user == user %}
+                            <form class="reviews-box__review__review-box__action-btns" method="POST"  action="{% url 'del-uni-review' review.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="delete"><i class="fas fa-trash"></i></button>
+                            </form>
+                        {% endif %}
                         <div class="reviews-box__review__review-box__header">
                             <div
                                 class="reviews-box__review__review-box__header__name-cont"

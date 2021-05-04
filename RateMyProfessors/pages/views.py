@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 
 from Account.forms import UserUpdateForm, ImageUpdateForm
@@ -185,3 +186,27 @@ def profile(request, id):
     }
 
     return render(request, 'pages/profile.html', context)
+
+
+
+def deleteUniReview(request, id):
+    if request.method == 'POST':
+        review = UniReview.objects.get(id=id)
+        if review.user == request.user:
+            review.delete()
+            messages.info(
+                request, f'Review was removed successfuly')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def deleteLecReview(request, id):
+    if request.method == 'POST':
+        review = LecturerReview.objects.get(id=id)
+        if review.user == request.user:
+            review.delete()
+            messages.info(
+                request, f'Review was removed successfuly')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

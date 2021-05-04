@@ -6,17 +6,29 @@
     <div class="reviewbox__content">
         <div class="reviewbox__content--header-box">
             <div class="lec-wrap">
-                <!-- <div class="logo-circle"> -->
                     <img
                         src="{{ lec.image.url }}"
                         alt=""
                         class="lec-wrap__logo"
                     />
-                <!-- </div> -->
             </div>
             <div class="details lec-details">
-                <div class="details__top-wrap">
+                <div class="lec-details__top-lec-wrap">
                     <h2 class="details__top-wrap--title lec-name">{{ lec.first_name }} {{lec.last_name}}</h2>
+                </div>
+                <div class="lec-details__social-wrap">
+                    <a href="#">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -310,9 +322,25 @@
                                 class="reviews-box__review__profile-wrap__img-wrap__img"
                             />
                             {% endif %}
+                            
+                            <h3
+                            class="reviews-box__review__review-box__header__name-cont__name-hidden"
+                        >
+                            {% if review.user.username %}
+                                {{review.user.username }} 
+                            {% else %}
+                                Anonymous 
+                            {% endif %}
+                        </h3>
                         </div>
                     </div>
                     <div class="reviews-box__review__review-box">
+                        {% if review.user == user %}
+                            <form class="reviews-box__review__review-box__action-btns" method="POST"  action="{% url 'del-lec-review' review.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="delete"><i class="fas fa-trash"></i></button>
+                            </form>
+                        {% endif %}
                         <div class="reviews-box__review__review-box__header">
                             <div
                                 class="reviews-box__review__review-box__header__name-cont"
