@@ -314,7 +314,17 @@
                                 alt="User Image"
                                 class="reviews-box__review__profile-wrap__img-wrap__img"
                             />
+                            <h3
+                            class="reviews-box__review__review-box__header__name-cont__name-hidden"
+                        >
                             {% endif %}
+
+                            {% if review.user.username %}
+                                {{review.user.username }} 
+                            {% else %}
+                                Anonymous 
+                            {% endif %}
+                        </h3>
                         </div>
                     </div>
                     <div class="reviews-box__review__review-box">
@@ -326,8 +336,10 @@
                                     class="reviews-box__review__review-box__header__name-cont__name"
                                 >
                                     {% if review.user.username %}
-                                    {{review.user.username }} {% else %}
-                                    Anonymous {% endif %}
+                                        {{review.user.username }} 
+                                    {% else %}
+                                        Anonymous 
+                                    {% endif %}
                                 </h3>
                             </div>
                             <div
