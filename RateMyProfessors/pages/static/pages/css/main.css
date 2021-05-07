@@ -198,6 +198,12 @@ button {
   font-size: 32px;
 }
 
+@media screen and (max-width: 1200px) {
+  .nav .logo-container .logo {
+    font-size: 26px;
+  }
+}
+
 .nav .logo-container .logo p {
   margin-left: 5px;
 }
@@ -224,6 +230,12 @@ button {
           flex-direction: row;
 }
 
+@media screen and (max-width: 1000px) {
+  .nav .menu {
+    display: none;
+  }
+}
+
 .nav .menu__ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,6 +250,12 @@ button {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 700px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav .menu__ul {
+    width: 500px;
+  }
 }
 
 .nav .menu__ul__li {
@@ -262,6 +280,12 @@ button {
   font-weight: 700;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav .menu__ul__li--a {
+    font-size: 14px;
+  }
 }
 
 .nav .menu__ul__li--a:hover {
@@ -357,6 +381,33 @@ button {
 
 .nav .menu .auth-ul #singUpBtn a {
   color: #ffffff;
+}
+
+.nav__burger {
+  display: none;
+  padding-right: 10px;
+  cursor: pointer;
+  z-index: 30;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav__burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav__burger--line {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #222831;
+    height: 3px;
+    margin: 5px;
+    width: 30px;
+    border-radius: 5px;
+  }
 }
 
 .home {
