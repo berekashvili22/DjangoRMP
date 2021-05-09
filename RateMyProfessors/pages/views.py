@@ -15,6 +15,9 @@ from Review.filters import UniReviewFilter, LecReviewFilter
 
 from django.core.paginator import Paginator
 
+import json
+from django.http import JsonResponse
+
 def home(request):
     return render(request, 'pages/home.html')
 
@@ -210,3 +213,34 @@ def deleteLecReview(request, id):
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+
+
+def homeSearch(request):
+    print('view recived call')
+    if request.method == 'POST':
+        # get request body
+        reqData = json.loads(request.body)
+        searchVal = reqData['searchValue']
+        uniData = University.objects.filter(
+            name__istartswith=searchVal ) | University.objects.filter (
+            short_name__istartswith=searchVal) 
+
+        lectData = Lecturer.objects.filter(
+            first_name__istartswith=searchVal 
+        ) | Lecturer.objects.filter(last_name__istartswith=searchVal)
+
+        data = []
+        data += lectData.values()
+        data += uniData.values()
+        print(data)
+        # data.append(list(uniData.values()))
+        # data.append(list(lectData.values()))
+
+        # print(lectData.values()) 
+
+        return JsonResponse(list(data), safe=False)
+        
+            
+        

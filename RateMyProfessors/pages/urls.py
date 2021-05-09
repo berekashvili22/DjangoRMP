@@ -10,4 +10,6 @@ urlpatterns = [
     path('profile/<id>/', views.profile, name='profile'),
     path('uni-review/del/<id>/', views.deleteUniReview, name='del-uni-review'),
     path('lec-review/del/<id>/', views.deleteLecReview, name='del-lec-review'),
+    path('rmp-search/', views.homeSearch, name='homeSearch'),
+    
 ]
