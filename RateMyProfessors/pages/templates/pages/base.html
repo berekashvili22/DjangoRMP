@@ -12,6 +12,7 @@
     crossorigin="anonymous" />
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="{% static 'pages/css/main.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'pages/css/fail.css' %}" />
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
@@ -37,6 +38,7 @@
       </a>
     </div>
     <nav class="menu">
+      
       <ul class="menu__ul">
         <li class="menu__ul__li">
           <a href="{% url 'universities' %}" class="menu__ul__li--a">
@@ -49,6 +51,24 @@
         <li class="menu__ul__li">
           <a href="{% url 'lecturers' %}" class="menu__ul__li--a">
             Lecturers
+          </a>
+        </li>
+      </ul>
+      <!-- responsive auth ul -->
+      <ul class="menu__ul auth-responsive">
+        <li class="menu__ul__li">
+          <p href="#" class="menu__ul__li--a">
+            {{user.email}}
+          </p>
+        </li>
+        <li class="menu__ul__li">
+          <a href="{% url 'profile' user.id %}" class="menu__ul__li--a">
+            Profile
+          </a>
+        </li>
+        <li class="menu__ul__li">
+          <a href="{% url 'logout' %}" class="menu__ul__li--a logout">
+            Logout
           </a>
         </li>
       </ul>
@@ -85,6 +105,7 @@
         {% endif %}
       </ul>
     </nav>
+    <!-- burger button -->
     <div class="nav__burger">
       <div class="nav__burger--line line1"></div>
       <div class="nav__burger--line line2"></div>
@@ -139,6 +160,7 @@
     </div>
   </footer>
 
+  <script src="{% static 'pages/js/navbar.js' %}"></script>
 
   <script type="text/javascript">
 
