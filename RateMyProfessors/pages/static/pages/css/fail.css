@@ -763,6 +763,7 @@ button {
   transition: all 0.3s ease-in-out;
   border: 1px solid #f2f8f9;
   position: relative;
+  color: #222831;
 }
 
 .universities__list-wrap__box:hover {

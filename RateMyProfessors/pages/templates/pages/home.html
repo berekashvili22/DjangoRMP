@@ -11,9 +11,13 @@
                 <h3 class="home__search-wrap__content--subtitle">
                     Enter <p id="txtChange"></p> to get started
                 </h3>
-                <div class="search-wrap">
+                <div class="search-wrap" id="searchWrap">
                     <input type="text" class="search-wrap__input" id="homeSearch" placeholder="Type here...">
                     <i class="fas fa-search"></i>
+                    <!-- result cont -->
+                    <div class="search-wrap__result-cont" id="searchResult">
+                        
+                    </div>
                 </div>
 
             </div>
@@ -46,11 +50,16 @@
     </section>
 
     <script type="text/javascript">
+        // search input 
         const searchBtn = document.getElementById('homeSearch')
+        // search result box
+        const resultBox = document.getElementById('searchResult')
+        // search wrap
+        const searchWrap = document.getElementById('searchWrap')
 
         searchBtn.addEventListener('keyup', (e) => {
             let searchValue = e.target.value;
-            console.log(searchValue)
+            // console.log(searchValue)
             if (searchValue.length > 0) {
                 const url = '/rmp-search/'
 
@@ -68,10 +77,80 @@
                 })
 
                 .then((data) => {
-                    console.log(data)
+                    if (data.length > 0) {
+                        
+                        resultBox.style.display = 'flex'
+                        searchWrap.classList.add('brd-b-light')
+
+                        // console.log(data)
+                        // <div class="result-item" href="{% url 'lecturer' " + ${parseInt(item.id)} + "%}">
+
+                        resultBox.innerHTML = ''
+                        data.forEach(item => {
+                            if (item.first_name) {
+                            resultBox.innerHTML+=`
+                            <div class="result-item" data-id=${item.id} data-type='lecturer'>
+                                <div class="result-item__image-wrap">
+                                    <img src="/media/${item.image}" alt="" class="result-item__img">
+                                </div>
+                                <div class="result-item__content-wrap">
+                                    <div class="result-item__name">${item.first_name} ${item.last_name}</div>
+                                </div>
+                            </div>
+                            `
+                            }
+                            if (item.name) {
+                                resultBox.innerHTML+=`
+                                <div class="result-item" data-id=${item.id} data-type='university'>
+                                    <div class="result-item__image-wrap">
+                                        <img src="/media/${item.logo}" alt="" class="result-item__img">
+                                    </div>
+                                    <div class="result-item__content-wrap">
+                                        <div class="result-item__name">${item.name}</div>
+                                    </div>
+                                </div>
+                                `
+                            }   
+
+                            let resItems = document.getElementsByClassName('result-item')
+                            for (var i=0; i<resItems.length; i++) {
+                                resItems[i].addEventListener('click', function() {
+                                    let itemId = this.dataset.id
+                                    let target = this.dataset.type
+
+                                    window.location.href = `/${target}/detail/${itemId}`
+                                    
+                                })
+                            }
+                        
+
+                        })
+                    };  
+                    if (data.length == 0){
+                        // console.log('equals zero')
+                        resultBox.style.display = 'flex'
+                        searchWrap.classList.add('brd-b-light')
+                        resultBox.innerHTML = ''
+                        resultBox.innerHTML = `
+                            <div class="result-item">
+                                <div class="result-item__not-found-wrap">
+                                    <p class="not-found-msg">No matching data found</p>
+                                </div>    
+                            </div>
+                        `
+                        
+                        // resultBox.style.display = 'none'
+                    };
+
+                    
                 })
+            } else {
+                resultBox.style.display = 'none'
+                searchWrap.classList.remove('brd-b-light')
+
             }
         })
+ 
     </script>
 
 {% endblock %}
